@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Header Files\canvas">
+      <UniqueIdentifier>{c3c9b924-5a44-42fe-aad3-6627e596e7c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\canvas">
+      <UniqueIdentifier>{5daaf17e-026e-4b97-bebc-7010200eb015}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\drawingboard">
+      <UniqueIdentifier>{0f9e8be6-5e04-4677-bc2d-058a49fde7c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\drawingboard">
+      <UniqueIdentifier>{c93cca32-421c-4cc0-822b-79d654e891dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\net">
+      <UniqueIdentifier>{00e31f9f-e670-4248-86bd-b73e979d84c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\net">
+      <UniqueIdentifier>{ef5fea00-1bb1-4057-ad73-b4a30cb23cee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\paintcore">
+      <UniqueIdentifier>{38c403d1-99d7-4feb-808e-7862a16ef6fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\paintcore">
+      <UniqueIdentifier>{f56a0efa-99e7-4468-8948-23de45234cbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\tools">
+      <UniqueIdentifier>{1092d31f-07ea-4a22-9b02-6f4269d93993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tools">
+      <UniqueIdentifier>{738bcdd9-8fb9-44d6-9edb-96a365e0d94a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils">
+      <UniqueIdentifier>{c6777929-f3b3-4b4b-be7f-f883b42b0816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{46116e10-f1e7-4bc1-9a40-61f9fccdbc81}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DrawingBoard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="canvas\canvasmodel.cpp">
+      <Filter>Source Files\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="canvas\canvassaverrunnable.cpp">
+      <Filter>Source Files\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="canvas\history.cpp">
+      <Filter>Source Files\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="canvas\lasertrailmodel.cpp">
+      <Filter>Source Files\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="canvas\layerlist.cpp">
+      <Filter>Source Files\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="canvas\loader.cpp">
+      <Filter>Source Files\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="canvas\retcon.cpp">
+      <Filter>Source Files\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="canvas\statetracker.cpp">
+      <Filter>Source Files\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="canvas\usercursormodel.cpp">
+      <Filter>Source Files\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="drawingboard\annotationitem.cpp">
+      <Filter>Source Files\drawingboard</Filter>
+    </ClCompile>
+    <ClCompile Include="drawingboard\canvasitem.cpp">
+      <Filter>Source Files\drawingboard</Filter>
+    </ClCompile>
+    <ClCompile Include="drawingboard\canvasscene.cpp">
+      <Filter>Source Files\drawingboard</Filter>
+    </ClCompile>
+    <ClCompile Include="drawingboard\canvasview.cpp">
+      <Filter>Source Files\drawingboard</Filter>
+    </ClCompile>
+    <ClCompile Include="drawingboard\lasertrailitem.cpp">
+      <Filter>Source Files\drawingboard</Filter>
+    </ClCompile>
+    <ClCompile Include="drawingboard\selectionitem.cpp">
+      <Filter>Source Files\drawingboard</Filter>
+    </ClCompile>
+    <ClCompile Include="net\commands.cpp">
+      <Filter>Source Files\net</Filter>
+    </ClCompile>
+    <ClCompile Include="net\image.cpp">
+      <Filter>Source Files\net</Filter>
+    </ClCompile>
+    <ClCompile Include="net\message.cpp">
+      <Filter>Source Files\net</Filter>
+    </ClCompile>
+    <ClCompile Include="net\meta2.cpp">
+      <Filter>Source Files\net</Filter>
+    </ClCompile>
+    <ClCompile Include="net\pen.cpp">
+      <Filter>Source Files\net</Filter>
+    </ClCompile>
+    <ClCompile Include="net\textmode.cpp">
+      <Filter>Source Files\net</Filter>
+    </ClCompile>
+    <ClCompile Include="net\undo.cpp">
+      <Filter>Source Files\net</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\icon.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\images.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\kis_cubic_curve.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\palette.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\palettelistmodel.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\settings.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\annotation.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\beziertool.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\brushes.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\colorpicker.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\floodfill.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\laser.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\selection.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\shapetools.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\strokesmoother.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\toolcontroller.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\toolproperties.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\utils.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="paintcore\annotationmodel.cpp">
+      <Filter>Source Files\paintcore</Filter>
+    </ClCompile>
+    <ClCompile Include="paintcore\blendmodes.cpp">
+      <Filter>Source Files\paintcore</Filter>
+    </ClCompile>
+    <ClCompile Include="paintcore\brush.cpp">
+      <Filter>Source Files\paintcore</Filter>
+    </ClCompile>
+    <ClCompile Include="paintcore\brushmask.cpp">
+      <Filter>Source Files\paintcore</Filter>
+    </ClCompile>
+    <ClCompile Include="paintcore\layer.cpp">
+      <Filter>Source Files\paintcore</Filter>
+    </ClCompile>
+    <ClCompile Include="paintcore\layerstack.cpp">
+      <Filter>Source Files\paintcore</Filter>
+    </ClCompile>
+    <ClCompile Include="paintcore\rasterop.cpp">
+      <Filter>Source Files\paintcore</Filter>
+    </ClCompile>
+    <ClCompile Include="paintcore\shapes.cpp">
+      <Filter>Source Files\paintcore</Filter>
+    </ClCompile>
+    <ClCompile Include="paintcore\tile.cpp">
+      <Filter>Source Files\paintcore</Filter>
+    </ClCompile>
+    <ClCompile Include="canvas\canvasSelection.cpp">
+      <Filter>Source Files\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="net\layerMsg.cpp">
+      <Filter>Source Files\net</Filter>
+    </ClCompile>
+    <ClCompile Include="net\annotationMsg.cpp">
+      <Filter>Source Files\net</Filter>
+    </ClCompile>
+    <ClCompile Include="paintcore\floodfillpaint.cpp">
+      <Filter>Source Files\paintcore</Filter>
+    </ClCompile>
+    <ClCompile Include="document.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="boardwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="canvas\history.h">
+      <Filter>Header Files\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="canvas\loader.h">
+      <Filter>Header Files\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="canvas\pressure.h">
+      <Filter>Header Files\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="canvas\retcon.h">
+      <Filter>Header Files\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="drawingboard\annotationitem.h">
+      <Filter>Header Files\drawingboard</Filter>
+    </ClInclude>
+    <ClInclude Include="drawingboard\lasertrailitem.h">
+      <Filter>Header Files\drawingboard</Filter>
+    </ClInclude>
+    <ClInclude Include="drawingboard\selectionitem.h">
+      <Filter>Header Files\drawingboard</Filter>
+    </ClInclude>
+    <ClInclude Include="net\commands.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="net\image.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="net\message.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="net\meta2.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="net\pen.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="net\textmode.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="net\undo.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\icon.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\images.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\kis_cubic_curve.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\settings.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\annotation.h">
+      <Filter>Header Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\beziertool.h">
+      <Filter>Header Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\brushes.h">
+      <Filter>Header Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\colorpicker.h">
+      <Filter>Header Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\floodfill.h">
+      <Filter>Header Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\laser.h">
+      <Filter>Header Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\selection.h">
+      <Filter>Header Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\shapetools.h">
+      <Filter>Header Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\strokesmoother.h">
+      <Filter>Header Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\tool.h">
+      <Filter>Header Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\toolproperties.h">
+      <Filter>Header Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\utils.h">
+      <Filter>Header Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="paintcore\blendmodes.h">
+      <Filter>Header Files\paintcore</Filter>
+    </ClInclude>
+    <ClInclude Include="paintcore\brush.h">
+      <Filter>Header Files\paintcore</Filter>
+    </ClInclude>
+    <ClInclude Include="paintcore\brushmask.h">
+      <Filter>Header Files\paintcore</Filter>
+    </ClInclude>
+    <ClInclude Include="paintcore\concurrent.h">
+      <Filter>Header Files\paintcore</Filter>
+    </ClInclude>
+    <ClInclude Include="paintcore\layer.h">
+      <Filter>Header Files\paintcore</Filter>
+    </ClInclude>
+    <ClInclude Include="paintcore\point.h">
+      <Filter>Header Files\paintcore</Filter>
+    </ClInclude>
+    <ClInclude Include="paintcore\rasterop.h">
+      <Filter>Header Files\paintcore</Filter>
+    </ClInclude>
+    <ClInclude Include="paintcore\shapes.h">
+      <Filter>Header Files\paintcore</Filter>
+    </ClInclude>
+    <ClInclude Include="paintcore\tile.h">
+      <Filter>Header Files\paintcore</Filter>
+    </ClInclude>
+    <ClInclude Include="net\layerMsg.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="net\annotationMsg.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="paintcore\floodfillpaint.h">
+      <Filter>Header Files\paintcore</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="drawingboard_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="canvas\canvasmodel.h">
+      <Filter>Header Files\canvas</Filter>
+    </QtMoc>
+    <QtMoc Include="canvas\canvassaverrunnable.h">
+      <Filter>Header Files\canvas</Filter>
+    </QtMoc>
+    <QtMoc Include="canvas\lasertrailmodel.h">
+      <Filter>Header Files\canvas</Filter>
+    </QtMoc>
+    <QtMoc Include="canvas\layerlist.h">
+      <Filter>Header Files\canvas</Filter>
+    </QtMoc>
+    <QtMoc Include="canvas\statetracker.h">
+      <Filter>Header Files\canvas</Filter>
+    </QtMoc>
+    <QtMoc Include="canvas\usercursormodel.h">
+      <Filter>Header Files\canvas</Filter>
+    </QtMoc>
+    <QtMoc Include="drawingboard\canvasitem.h">
+      <Filter>Header Files\drawingboard</Filter>
+    </QtMoc>
+    <QtMoc Include="drawingboard\canvasscene.h">
+      <Filter>Header Files\drawingboard</Filter>
+    </QtMoc>
+    <QtMoc Include="drawingboard\canvasview.h">
+      <Filter>Header Files\drawingboard</Filter>
+    </QtMoc>
+    <QtMoc Include="utils\palette.h">
+      <Filter>Header Files\utils</Filter>
+    </QtMoc>
+    <QtMoc Include="utils\palettelistmodel.h">
+      <Filter>Header Files\utils</Filter>
+    </QtMoc>
+    <QtMoc Include="tools\toolcontroller.h">
+      <Filter>Header Files\tools</Filter>
+    </QtMoc>
+    <QtMoc Include="paintcore\annotationmodel.h">
+      <Filter>Header Files\paintcore</Filter>
+    </QtMoc>
+    <QtMoc Include="paintcore\layerstack.h">
+      <Filter>Header Files\paintcore</Filter>
+    </QtMoc>
+    <QtMoc Include="canvas\canvasSelection.h">
+      <Filter>Header Files\canvas</Filter>
+    </QtMoc>
+    <QtMoc Include="document.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="boardwidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="DrawingBoard.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+</Project>

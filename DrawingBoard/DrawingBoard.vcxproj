@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B12702AD-ABFB-343A-A199-8E24837244A3}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_MULTIMEDIA_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_NETWORK_LIB;QT_WIDGETS_LIB;DRAWINGBOARD_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Multimediad.lib;Qt5MultimediaWidgetsd.lib;Qt5Networkd.lib;Qt5Widgetsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_MULTIMEDIA_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_NETWORK_LIB;QT_WIDGETS_LIB;DRAWINGBOARD_LIB;_WINDLL</Define>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWidgets</IncludePath>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_MULTIMEDIA_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_NETWORK_LIB;QT_WIDGETS_LIB;DRAWINGBOARD_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5Multimedia.lib;Qt5MultimediaWidgets.lib;Qt5Network.lib;Qt5Widgets.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_MULTIMEDIA_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_NETWORK_LIB;QT_WIDGETS_LIB;DRAWINGBOARD_LIB;_WINDLL</Define>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWidgets</IncludePath>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="boardwidget.cpp" />
+    <ClCompile Include="canvas\canvasmodel.cpp" />
+    <ClCompile Include="canvas\canvassaverrunnable.cpp" />
+    <ClCompile Include="canvas\history.cpp" />
+    <ClCompile Include="canvas\lasertrailmodel.cpp" />
+    <ClCompile Include="canvas\layerlist.cpp" />
+    <ClCompile Include="canvas\loader.cpp" />
+    <ClCompile Include="canvas\retcon.cpp" />
+    <ClCompile Include="canvas\canvasSelection.cpp" />
+    <ClCompile Include="canvas\statetracker.cpp" />
+    <ClCompile Include="canvas\usercursormodel.cpp" />
+    <ClCompile Include="document.cpp" />
+    <ClCompile Include="DrawingBoard.cpp" />
+    <ClCompile Include="drawingboard\annotationitem.cpp" />
+    <ClCompile Include="drawingboard\canvasitem.cpp" />
+    <ClCompile Include="drawingboard\canvasscene.cpp" />
+    <ClCompile Include="drawingboard\canvasview.cpp" />
+    <ClCompile Include="drawingboard\lasertrailitem.cpp" />
+    <ClCompile Include="drawingboard\selectionitem.cpp" />
+    <ClCompile Include="net\annotationMsg.cpp" />
+    <ClCompile Include="net\commands.cpp" />
+    <ClCompile Include="net\image.cpp" />
+    <ClCompile Include="net\layerMsg.cpp" />
+    <ClCompile Include="net\message.cpp" />
+    <ClCompile Include="net\meta2.cpp" />
+    <ClCompile Include="net\pen.cpp" />
+    <ClCompile Include="net\textmode.cpp" />
+    <ClCompile Include="net\undo.cpp" />
+    <ClCompile Include="paintcore\annotationmodel.cpp" />
+    <ClCompile Include="paintcore\blendmodes.cpp" />
+    <ClCompile Include="paintcore\brush.cpp" />
+    <ClCompile Include="paintcore\brushmask.cpp" />
+    <ClCompile Include="paintcore\floodfillpaint.cpp" />
+    <ClCompile Include="paintcore\layer.cpp" />
+    <ClCompile Include="paintcore\layerstack.cpp" />
+    <ClCompile Include="paintcore\rasterop.cpp" />
+    <ClCompile Include="paintcore\shapes.cpp" />
+    <ClCompile Include="paintcore\tile.cpp" />
+    <ClCompile Include="tools\annotation.cpp" />
+    <ClCompile Include="tools\beziertool.cpp" />
+    <ClCompile Include="tools\brushes.cpp" />
+    <ClCompile Include="tools\colorpicker.cpp" />
+    <ClCompile Include="tools\floodfill.cpp" />
+    <ClCompile Include="tools\laser.cpp" />
+    <ClCompile Include="tools\selection.cpp" />
+    <ClCompile Include="tools\shapetools.cpp" />
+    <ClCompile Include="tools\strokesmoother.cpp" />
+    <ClCompile Include="tools\toolcontroller.cpp" />
+    <ClCompile Include="tools\toolproperties.cpp" />
+    <ClCompile Include="tools\utils.cpp" />
+    <ClCompile Include="utils\icon.cpp" />
+    <ClCompile Include="utils\images.cpp" />
+    <ClCompile Include="utils\kis_cubic_curve.cpp" />
+    <ClCompile Include="utils\palette.cpp" />
+    <ClCompile Include="utils\palettelistmodel.cpp" />
+    <ClCompile Include="utils\settings.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="document.h" />
+    <QtMoc Include="boardwidget.h" />
+    <ClInclude Include="net\annotationMsg.h" />
+    <ClInclude Include="net\commands.h" />
+    <ClInclude Include="net\image.h" />
+    <ClInclude Include="net\layerMsg.h" />
+    <ClInclude Include="net\message.h" />
+    <ClInclude Include="net\meta2.h" />
+    <ClInclude Include="net\pen.h" />
+    <ClInclude Include="net\textmode.h" />
+    <ClInclude Include="net\undo.h" />
+    <QtMoc Include="paintcore\annotationmodel.h" />
+    <ClInclude Include="paintcore\blendmodes.h" />
+    <ClInclude Include="paintcore\brush.h" />
+    <ClInclude Include="paintcore\brushmask.h" />
+    <ClInclude Include="paintcore\concurrent.h" />
+    <ClInclude Include="paintcore\floodfillpaint.h" />
+    <ClInclude Include="paintcore\layer.h" />
+    <QtMoc Include="paintcore\layerstack.h" />
+    <ClInclude Include="paintcore\point.h" />
+    <ClInclude Include="paintcore\rasterop.h" />
+    <ClInclude Include="paintcore\shapes.h" />
+    <ClInclude Include="paintcore\tile.h" />
+    <ClInclude Include="tools\annotation.h" />
+    <ClInclude Include="tools\beziertool.h" />
+    <ClInclude Include="tools\brushes.h" />
+    <ClInclude Include="tools\colorpicker.h" />
+    <ClInclude Include="tools\floodfill.h" />
+    <ClInclude Include="tools\laser.h" />
+    <ClInclude Include="tools\selection.h" />
+    <ClInclude Include="tools\shapetools.h" />
+    <ClInclude Include="tools\strokesmoother.h" />
+    <ClInclude Include="tools\tool.h" />
+    <QtMoc Include="tools\toolcontroller.h" />
+    <ClInclude Include="tools\toolproperties.h" />
+    <ClInclude Include="tools\utils.h" />
+    <ClInclude Include="utils\icon.h" />
+    <ClInclude Include="utils\images.h" />
+    <ClInclude Include="utils\kis_cubic_curve.h" />
+    <ClInclude Include="utils\settings.h" />
+    <QtMoc Include="utils\palettelistmodel.h" />
+    <QtMoc Include="utils\palette.h" />
+    <QtMoc Include="canvas\canvasmodel.h" />
+    <QtMoc Include="canvas\canvassaverrunnable.h" />
+    <ClInclude Include="canvas\history.h" />
+    <QtMoc Include="canvas\lasertrailmodel.h" />
+    <QtMoc Include="canvas\layerlist.h" />
+    <ClInclude Include="canvas\loader.h" />
+    <ClInclude Include="canvas\pressure.h" />
+    <ClInclude Include="canvas\retcon.h" />
+    <QtMoc Include="canvas\canvasSelection.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_MULTIMEDIA_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_NETWORK_LIB;QT_WIDGETS_LIB;DRAWINGBOARD_LIB</Define>
+    </QtMoc>
+    <QtMoc Include="canvas\statetracker.h" />
+    <QtMoc Include="canvas\usercursormodel.h" />
+    <QtMoc Include="DrawingBoard.h" />
+    <ClInclude Include="drawingboard\annotationitem.h" />
+    <QtMoc Include="drawingboard\canvasitem.h" />
+    <QtMoc Include="drawingboard\canvasscene.h" />
+    <QtMoc Include="drawingboard\canvasview.h" />
+    <ClInclude Include="drawingboard\lasertrailitem.h" />
+    <ClInclude Include="drawingboard\selectionitem.h" />
+    <ClInclude Include="drawingboard_global.h" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_Win32="msvc2015" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
