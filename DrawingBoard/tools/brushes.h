@@ -36,6 +36,16 @@ public:
 	bool allowSmoothing() const override { return true; }
 };
 
+//鼠标工具（什么也不做，光改变图标）
+class MouseTool :public Tool
+{
+public:
+	MouseTool(ToolController &owner);
+
+	void begin(const paintcore::Point& point, bool right, float zoom) override;
+	void motion(const paintcore::Point& point, bool constrain, bool center) override;
+	void end() override;
+};
 }
 
 #endif

@@ -51,6 +51,7 @@ ToolController::ToolController(QObject *parent)
 	registerTool(new Line(*this));
 	registerTool(new DotLine(*this));
 	registerTool(new Arrow(*this));
+	registerTool(new MouseTool(*this));
 	registerTool(new Rectangle(*this));
 	registerTool(new Ellipse(*this));
 	registerTool(new BezierTool(*this));
@@ -134,7 +135,11 @@ void ToolController::setActiveTool(Tool::Type tool)
 		else
 			emit setDotline(false);
 
-		m_activeTool->cancelMultipart();
+		if (nullptr != m_activeTool)
+		{
+			m_activeTool->cancelMultipart();
+		}
+		
 		m_activeTool = getTool(tool);
 		emit activeToolChanged(tool);
 		emit toolCursorChanged(activeToolCursor());

@@ -64,7 +64,7 @@ paintcore::PointVector arrow(const QRectF &rect)
 	const QPointF p1 = rect.topLeft();
 	const QPointF p2 = rect.bottomRight();
 	
-	double par = 15.0;//箭头部分三角形的腰长
+	double par = 20.0;//箭头部分三角形的腰长
 	double slopy = qAtan2((p2.y() - p1.y()), (p2.x() - p1.x()));
 	double cosy = qCos(slopy);
 	double siny = qSin(slopy);
@@ -76,16 +76,16 @@ paintcore::PointVector arrow(const QRectF &rect)
 	point3 = QPoint(p2.x() + int(-par*cosy - (par / 2.0*siny)) + offsetX, p2.y() + int(-par*siny + (par / 2.0*cosy)) - offsetY);
 	point4 = QPoint(p2.x() + int(-par*cosy + (par / 2.0*siny) - offsetX), p2.y() - int(par / 2.0*cosy + par*siny) + offsetY);
 	PointVector pv;
+	
 	pv.reserve(7);
-	pv << Point(p2, 1);
 	pv << Point(point1, 1);
 	pv << Point(point2, 1); //箭头
 	pv << Point(p2, 1);
+	pv << Point(point1, 1);
 
-	pv << Point(p1, 1);
 	pv << Point(point3, 1);
-	pv << Point(point4, 1); //箭身	
-	
+	pv << Point(p1, 1);
+	pv << Point(point4, 1); //箭身 
 	return pv;
 }
 
@@ -93,7 +93,7 @@ paintcore::PointVector dotline(const QRectF &rect)
 {
 	const QPointF p1 = rect.topLeft();
 	const QPointF p2 = rect.bottomRight();
-	const int step = 10;
+	const int step = 8;
 	QPointF dp = p2 - p1;
 	double m = hypot(dp.x(), dp.y());
 	int count = m / step;

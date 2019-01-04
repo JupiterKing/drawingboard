@@ -66,7 +66,7 @@ BoardWidget::BoardWidget(QWidget* parent /*= nullptr*/):
 	m_canvasscene(nullptr),
 	m_view(nullptr),
 	m_iSize(2),
-	m_color(Qt::white)
+	m_color(Qt::red)
 {
 	m_doc = new Document(this);
 	connect(this, SIGNAL(signal_open()), this, SLOT(open()));
@@ -200,7 +200,7 @@ void BoardWidget::operation_mouseCheck()
 {
 	//选择鼠标，修改一下光标
 	QApplication::setOverrideCursor(QCursor(Qt::ArrowCursor));
-	emit signal_toolChanged(tools::Tool::NOTOOL); //什么工具也不选择
+	emit signal_toolChanged(tools::Tool::MOUSETOOL); //什么工具也不选择
 }
 
 void BoardWidget::operation_pensize(int iSize)
@@ -281,7 +281,22 @@ void BoardWidget::operation_fillArea(QColor color)
 
 void BoardWidget::operation_expand(ExpandDirection direction)
 {
-	switch (direction)
+	qreal rotate = m_view->rotation();
+	int count = rotate / 90;
+	count = count % 4;
+	int iType;
+	if (count > 0)
+	{
+		iType =(((int)direction + 4) - count) % 4;
+	}
+	else if (count < 0)
+	{
+		iType = ((int)direction - count) % 4;
+	}
+	else {
+		iType = direction;
+	}
+	switch (iType)
 	{
 	case UP: { emit signal_expandup(); }break;
 	case RIGHT: { emit signal_expandright(); }break;

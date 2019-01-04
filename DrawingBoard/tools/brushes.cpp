@@ -65,5 +65,27 @@ void Freehand::end()
 	owner.sendMessage(protocol::MessagePtr(new protocol::PenUp(owner.myId())));
 }
 
+//////////////////////////////////////////////////////////////////////////
+MouseTool::MouseTool(ToolController &owner)
+	: Tool(owner,MOUSETOOL, Qt::ArrowCursor)
+{
+
+}
+
+void MouseTool::begin(const paintcore::Point& point, bool right, float zoom)
+{
+
+}
+
+void MouseTool::motion(const paintcore::Point& point, bool constrain, bool center)
+{
+
+}
+
+void MouseTool::end()
+{
+
+}
+
 }
 

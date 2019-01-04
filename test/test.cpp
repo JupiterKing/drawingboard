@@ -79,10 +79,38 @@ void test::setupActions()
 	connect(open, &QAction::triggered, m_widget, &BoardWidget::operation_open);
 	connect(undo, &QAction::triggered, m_widget, &BoardWidget::operation_undo);
 	connect(redo, &QAction::triggered, m_widget, &BoardWidget::operation_redo);
-	connect(expandup, &QAction::triggered, m_widget, &BoardWidget::signal_expandup);
-	connect(expanddown, &QAction::triggered, m_widget, &BoardWidget::signal_expanddown);
-	connect(expandleft, &QAction::triggered, m_widget, &BoardWidget::signal_expandleft);
-	connect(expandright, &QAction::triggered, m_widget, &BoardWidget::signal_expandright);
+	//connect(expandup, &QAction::triggered, m_widget, &BoardWidget::signal_expandup);
+	connect(expandup, &QAction::triggered, this, [&]()
+	{
+		if (m_widget)
+		{
+			m_widget->operation_expand(BoardWidget::UP);
+		}
+	});
+	connect(expanddown, &QAction::triggered, this, [&]()
+	{
+		if (m_widget)
+		{
+			m_widget->operation_expand(BoardWidget::DOWN);
+		}
+	});
+	connect(expandleft, &QAction::triggered, this, [&]()
+	{
+		if (m_widget)
+		{
+			m_widget->operation_expand(BoardWidget::LEFT);
+		}
+	});
+	connect(expandright, &QAction::triggered, this, [&]()
+	{
+		if (m_widget)
+		{
+			m_widget->operation_expand(BoardWidget::RIGHT);
+		}
+	});
+	//connect(expanddown, &QAction::triggered, m_widget, &BoardWidget::signal_expanddown);
+	//connect(expandleft, &QAction::triggered, m_widget, &BoardWidget::signal_expandleft);
+	//connect(expandright, &QAction::triggered, m_widget, &BoardWidget::signal_expandright);
 
 	connect(cleararea, &QAction::triggered, m_widget, &BoardWidget::operation_clearArea);
 	connect(fillfgarea, &QAction::triggered, m_widget, &BoardWidget::operation_fillArea);
