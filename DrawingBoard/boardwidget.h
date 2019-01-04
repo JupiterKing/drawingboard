@@ -80,7 +80,7 @@ signals:
 	void signal_redo();
 	void signal_toolChanged(tools::Tool::Type tool);
 	void signal_mouse();
-	void signal_brushsize(int iSize);
+	void signal_brushChange(tools::Tool::Type tool);
 	void signal_textsize(int iFontSize);
 	void signal_color(QColor color);
 	void signal_decal();
@@ -113,6 +113,7 @@ private:
 private:
 	widgets::CanvasView* m_view;
 	drawingboard::CanvasScene *m_canvasscene;
+	tools::Tool::Type m_lasttoolType;
 	Document*	m_doc;
 	QImage		m_image;
 	QColor		m_color;

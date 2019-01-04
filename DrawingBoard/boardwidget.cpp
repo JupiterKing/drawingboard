@@ -45,6 +45,7 @@
 #include "tools/toolcontroller.h"
 #include "net/annotationMsg.h"
 #include "net/undo.h"
+#include "paintcore/blendmodes.h"
 
 namespace {
 
@@ -66,7 +67,7 @@ BoardWidget::BoardWidget(QWidget* parent /*= nullptr*/):
 	m_canvasscene(nullptr),
 	m_view(nullptr),
 	m_iSize(2),
-	m_color(Qt::red)
+	m_color(QColor(0,0,0,255))
 {
 	m_doc = new Document(this);
 	connect(this, SIGNAL(signal_open()), this, SLOT(open()));
@@ -132,12 +133,21 @@ BoardWidget::BoardWidget(QWidget* parent /*= nullptr*/):
 	connect(this, &BoardWidget::signal_rotate270, this, [&]() { m_view->setRotation(270); });
 	connect(this, SIGNAL(signal_viewflip(bool)), m_view, SLOT(setViewFlip(bool)));
 	connect(this, SIGNAL(signal_viewmirror(bool)), m_view, SLOT(setViewMirror(bool)));
-	connect(this, SIGNAL(signal_brushsize(int)), m_view, SLOT(setOutlineSize(int)));
-	connect(this, &BoardWidget::signal_brushsize, this, [&](int iSize)
+	//connect(this, SIGNAL(signal_brushsize(int)), m_view, SLOT(setOutlineSize(int)));
+	connect(this, &BoardWidget::signal_brushChange, this, [&](tools::Tool::Type tool)
 	{
 		paintcore::Brush brush = m_doc->toolCtrl()->activeBrush();
 		brush.setSize(m_iSize);
-		brush.setColor(m_color);
+		if (tool == tools::Tool::ERASER)
+		{
+			brush.setColor(QColor(0, 0, 0, 255));
+			brush.setBlendingMode(paintcore::BlendMode::MODE_ERASE);
+		}
+		else
+		{
+			brush.setColor(m_color);
+			brush.setBlendingMode(paintcore::BlendMode::MODE_NORMAL);
+		}		
 		m_doc->toolCtrl()->setActiveBrush(brush);
 	});
 	connect(this, SIGNAL(signal_textsize(int)), m_view, SLOT(setOutlineSize(int)));
@@ -174,9 +184,9 @@ BoardWidget::~BoardWidget()
 //////////////////////////////////////////////////////////////////////////
 void BoardWidget::operation_open()
 {
-	//m_image.load("C:\\Users\\Public\\Pictures\\Sample Pictures\\111.jpg");
-	//operation_load(m_image);
-	emit signal_open();
+	m_image.load("C:\\Users\\Public\\Pictures\\Sample Pictures\\111.jpg");
+	operation_load(m_image);
+	//emit signal_open();
 }
 
 void BoardWidget::operation_load(const QImage& img)
@@ -207,13 +217,16 @@ void BoardWidget::operation_pensize(int iSize)
 {
 	emit signal_toolChanged(tools::Tool::FREEHAND);
 	m_iSize = iSize;
-	emit signal_brushsize(iSize);
+	emit signal_brushChange(tools::Tool::FREEHAND);
+	m_lasttoolType = tools::Tool::FREEHAND;
 }
 
 void BoardWidget::operation_text(int iFontSize)
 {
 	emit signal_toolChanged(tools::Tool::ANNOTATION);
 	emit signal_textsize(iFontSize);
+	emit signal_brushChange(tools::Tool::ANNOTATION);
+	m_lasttoolType = tools::Tool::ANNOTATION;
 }
 
 void BoardWidget::operation_shape(ShapeType eType)
@@ -223,26 +236,36 @@ void BoardWidget::operation_shape(ShapeType eType)
 		case LINE:
 		{
 			emit signal_toolChanged(tools::Tool::LINE);
+			emit signal_brushChange(tools::Tool::LINE);
+			m_lasttoolType = tools::Tool::LINE;
 		}
 		break;
 		case DOTLINE:
 		{
 			emit signal_toolChanged(tools::Tool::DOTLINE);
+			emit signal_brushChange(tools::Tool::DOTLINE);
+			m_lasttoolType = tools::Tool::DOTLINE;
 		}
 		break;
 		case ARROW:
 		{
 			emit signal_toolChanged(tools::Tool::ARROW);
+			emit signal_brushChange(tools::Tool::ARROW);
+			m_lasttoolType = tools::Tool::ARROW;
 		}
 		break;
 		case RECTANGLE:
 		{
 			emit signal_toolChanged(tools::Tool::RECTANGLE);
+			emit signal_brushChange(tools::Tool::RECTANGLE);
+			m_lasttoolType = tools::Tool::RECTANGLE;
 		}
 		break;
 		case ELLIPSE:
 		{
 			emit signal_toolChanged(tools::Tool::ELLIPSE);
+			emit signal_brushChange(tools::Tool::ELLIPSE);
+			m_lasttoolType = tools::Tool::ELLIPSE;
 		}
 		break;
 	}
@@ -252,15 +275,15 @@ void BoardWidget::operation_shape(ShapeType eType)
 void BoardWidget::operation_color(QColor color)
 {
 	m_color = color;
-	emit signal_brushsize(m_iSize);
+	emit signal_brushChange(m_lasttoolType);
 }
 
 void BoardWidget::operation_eraser(int iSize)
 {
 	emit signal_toolChanged(tools::Tool::ERASER);
 	m_iSize = iSize;
-	m_color = Qt::white;
-	emit signal_brushsize(iSize);
+	m_lasttoolType = tools::Tool::ERASER;
+	emit signal_brushChange(tools::Tool::ERASER);
 }
 
 void BoardWidget::operation_decal()
@@ -469,7 +492,8 @@ void BoardWidget::pasteImage(const QImage &image, const QPoint *point /*= nullpt
 
 void BoardWidget::clearOrDelete()
 {
-
+	/// No annotation selected: clear seleted area as usual
+	m_doc->fillArea(Qt::white, paintcore::BlendMode::MODE_ERASE);//用橡皮擦模式清除掉
 }
 
 void BoardWidget::resizeCanvas()

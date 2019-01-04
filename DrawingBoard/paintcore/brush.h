@@ -64,7 +64,7 @@ public:
 	//! Set color for heavy brush
 	void setColor(const QColor& color) { _color = color; }
 
-	//! Set smudging pressure for heavy brush
+	//! Set smudging pressure for heavy brush (设置重刷的涂抹压力）
 	void setSmudge(qreal smudge) { Q_ASSERT(smudge>=0 && smudge<=1); _smudge1 = smudge; }
 	//! Set smudging pressure for light brush
 	void setSmudge2(qreal smudge) { Q_ASSERT(smudge>=0 && smudge<=1); _smudge2 = smudge; }
