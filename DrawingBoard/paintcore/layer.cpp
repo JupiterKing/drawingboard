@@ -179,7 +179,8 @@ void Layer::resize(int top, int right, int bottom, int left)
 	// for the new tiles
 	Tile bgtile;
 	{
-		QColor bgcolor = _sampleEdgeColors(this, top>0, right>0, bottom>0, left>0);
+		//QColor bgcolor = _sampleEdgeColors(this, top>0, right>0, bottom>0, left>0);
+		QColor bgcolor = QColor(255, 255, 255, 255); //ÍØÕ¹Ä¬ÈÏ°×É«
 		if(bgcolor.alpha()>0)
 			bgtile = Tile(bgcolor);
 	}

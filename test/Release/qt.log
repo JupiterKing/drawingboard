@@ -1,3 +1,0 @@
-test.h|"G:\QtPractice\DrawingBoard\test\test.h" -o ".\GeneratedFiles\Release\moc_test.cpp" "-I..\DrawingBoard\\" "-I.\GeneratedFiles" "-I." "-IC:\Qt\Qt5.6.3\5.6.3\msvc2015\include" "-I.\GeneratedFiles\Release" "-IC:\Qt\Qt5.6.3\5.6.3\msvc2015\include\QtCore" "-IC:\Qt\Qt5.6.3\5.6.3\msvc2015\include\QtGui" "-IC:\Qt\Qt5.6.3\5.6.3\msvc2015\include\QtANGLE" "-IC:\Qt\Qt5.6.3\5.6.3\msvc2015\include\QtWidgets" -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-test.qrc|"G:\QtPractice\DrawingBoard\test\test.qrc" -o ".\GeneratedFiles\qrc_test.cpp" --name test
-test.ui|"G:\QtPractice\DrawingBoard\test\test.ui" -o ".\GeneratedFiles\ui_test.h"

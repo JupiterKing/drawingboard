@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_BoardWidget_t {
     QByteArrayData data[89];
-    char stringdata0[1207];
+    char stringdata0[1209];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,92 +38,92 @@ QT_MOC_LITERAL(5, 49, 18), // "signal_toolChanged"
 QT_MOC_LITERAL(6, 68, 17), // "tools::Tool::Type"
 QT_MOC_LITERAL(7, 86, 4), // "tool"
 QT_MOC_LITERAL(8, 91, 12), // "signal_mouse"
-QT_MOC_LITERAL(9, 104, 16), // "signal_brushsize"
-QT_MOC_LITERAL(10, 121, 5), // "iSize"
-QT_MOC_LITERAL(11, 127, 15), // "signal_textsize"
-QT_MOC_LITERAL(12, 143, 9), // "iFontSize"
-QT_MOC_LITERAL(13, 153, 12), // "signal_color"
-QT_MOC_LITERAL(14, 166, 5), // "color"
-QT_MOC_LITERAL(15, 172, 12), // "signal_decal"
-QT_MOC_LITERAL(16, 185, 15), // "signal_expandup"
-QT_MOC_LITERAL(17, 201, 18), // "signal_expandright"
-QT_MOC_LITERAL(18, 220, 17), // "signal_expanddown"
-QT_MOC_LITERAL(19, 238, 17), // "signal_expandleft"
-QT_MOC_LITERAL(20, 256, 11), // "signal_zoom"
-QT_MOC_LITERAL(21, 268, 9), // "izoomrate"
-QT_MOC_LITERAL(22, 278, 13), // "signal_zoomin"
-QT_MOC_LITERAL(23, 292, 14), // "signal_zoomout"
-QT_MOC_LITERAL(24, 307, 15), // "signal_zoomorig"
-QT_MOC_LITERAL(25, 323, 17), // "signal_rotateorig"
-QT_MOC_LITERAL(26, 341, 15), // "signal_rotatecw"
-QT_MOC_LITERAL(27, 357, 16), // "signal_rotateccw"
-QT_MOC_LITERAL(28, 374, 15), // "signal_rotate90"
-QT_MOC_LITERAL(29, 390, 16), // "signal_rotate180"
-QT_MOC_LITERAL(30, 407, 16), // "signal_rotate270"
-QT_MOC_LITERAL(31, 424, 15), // "signal_viewflip"
-QT_MOC_LITERAL(32, 440, 5), // "bflip"
-QT_MOC_LITERAL(33, 446, 17), // "signal_viewmirror"
-QT_MOC_LITERAL(34, 464, 7), // "bmirror"
-QT_MOC_LITERAL(35, 472, 16), // "signal_clearArea"
-QT_MOC_LITERAL(36, 489, 15), // "signal_fillArea"
-QT_MOC_LITERAL(37, 505, 22), // "signal_showannotations"
-QT_MOC_LITERAL(38, 528, 5), // "bshow"
-QT_MOC_LITERAL(39, 534, 21), // "signal_showuserlayers"
-QT_MOC_LITERAL(40, 556, 17), // "signal_showlasers"
-QT_MOC_LITERAL(41, 574, 14), // "operation_open"
-QT_MOC_LITERAL(42, 589, 14), // "operation_load"
-QT_MOC_LITERAL(43, 604, 3), // "img"
-QT_MOC_LITERAL(44, 608, 14), // "operation_undo"
-QT_MOC_LITERAL(45, 623, 14), // "operation_redo"
-QT_MOC_LITERAL(46, 638, 20), // "operation_mouseCheck"
-QT_MOC_LITERAL(47, 659, 17), // "operation_pensize"
-QT_MOC_LITERAL(48, 677, 14), // "operation_text"
-QT_MOC_LITERAL(49, 692, 15), // "operation_shape"
-QT_MOC_LITERAL(50, 708, 9), // "ShapeType"
-QT_MOC_LITERAL(51, 718, 5), // "eType"
-QT_MOC_LITERAL(52, 724, 15), // "operation_color"
-QT_MOC_LITERAL(53, 740, 16), // "operation_eraser"
-QT_MOC_LITERAL(54, 757, 15), // "operation_decal"
-QT_MOC_LITERAL(55, 773, 19), // "operation_clearArea"
-QT_MOC_LITERAL(56, 793, 18), // "operation_fillArea"
-QT_MOC_LITERAL(57, 812, 16), // "operation_expand"
-QT_MOC_LITERAL(58, 829, 15), // "ExpandDirection"
-QT_MOC_LITERAL(59, 845, 9), // "direction"
-QT_MOC_LITERAL(60, 855, 18), // "operation_rotation"
-QT_MOC_LITERAL(61, 874, 16), // "RotationDirecton"
-QT_MOC_LITERAL(62, 891, 14), // "operation_zoom"
-QT_MOC_LITERAL(63, 906, 14), // "operation_save"
-QT_MOC_LITERAL(64, 921, 7), // "QImage&"
-QT_MOC_LITERAL(65, 929, 21), // "operation_screenshots"
-QT_MOC_LITERAL(66, 951, 7), // "showNew"
-QT_MOC_LITERAL(67, 959, 4), // "open"
-QT_MOC_LITERAL(68, 964, 3), // "url"
-QT_MOC_LITERAL(69, 968, 4), // "save"
-QT_MOC_LITERAL(70, 973, 8), // "filename"
-QT_MOC_LITERAL(71, 982, 11), // "newDocument"
-QT_MOC_LITERAL(72, 994, 4), // "size"
-QT_MOC_LITERAL(73, 999, 10), // "background"
-QT_MOC_LITERAL(74, 1010, 23), // "updateTabletSupportMode"
-QT_MOC_LITERAL(75, 1034, 5), // "paste"
-QT_MOC_LITERAL(76, 1040, 10), // "pasteImage"
-QT_MOC_LITERAL(77, 1051, 5), // "image"
-QT_MOC_LITERAL(78, 1057, 13), // "const QPoint*"
-QT_MOC_LITERAL(79, 1071, 5), // "point"
-QT_MOC_LITERAL(80, 1077, 13), // "clearOrDelete"
-QT_MOC_LITERAL(81, 1091, 12), // "resizeCanvas"
-QT_MOC_LITERAL(82, 1104, 11), // "toolChanged"
-QT_MOC_LITERAL(83, 1116, 15), // "onCanvasChanged"
-QT_MOC_LITERAL(84, 1132, 20), // "canvas::CanvasModel*"
-QT_MOC_LITERAL(85, 1153, 6), // "canvas"
-QT_MOC_LITERAL(86, 1160, 19), // "onCanvasSaveStarted"
-QT_MOC_LITERAL(87, 1180, 13), // "onCanvasSaved"
-QT_MOC_LITERAL(88, 1194, 12) // "errorMessage"
+QT_MOC_LITERAL(9, 104, 18), // "signal_brushChange"
+QT_MOC_LITERAL(10, 123, 15), // "signal_textsize"
+QT_MOC_LITERAL(11, 139, 9), // "iFontSize"
+QT_MOC_LITERAL(12, 149, 12), // "signal_color"
+QT_MOC_LITERAL(13, 162, 5), // "color"
+QT_MOC_LITERAL(14, 168, 12), // "signal_decal"
+QT_MOC_LITERAL(15, 181, 15), // "signal_expandup"
+QT_MOC_LITERAL(16, 197, 18), // "signal_expandright"
+QT_MOC_LITERAL(17, 216, 17), // "signal_expanddown"
+QT_MOC_LITERAL(18, 234, 17), // "signal_expandleft"
+QT_MOC_LITERAL(19, 252, 11), // "signal_zoom"
+QT_MOC_LITERAL(20, 264, 9), // "izoomrate"
+QT_MOC_LITERAL(21, 274, 13), // "signal_zoomin"
+QT_MOC_LITERAL(22, 288, 14), // "signal_zoomout"
+QT_MOC_LITERAL(23, 303, 15), // "signal_zoomorig"
+QT_MOC_LITERAL(24, 319, 17), // "signal_rotateorig"
+QT_MOC_LITERAL(25, 337, 15), // "signal_rotatecw"
+QT_MOC_LITERAL(26, 353, 16), // "signal_rotateccw"
+QT_MOC_LITERAL(27, 370, 15), // "signal_rotate90"
+QT_MOC_LITERAL(28, 386, 16), // "signal_rotate180"
+QT_MOC_LITERAL(29, 403, 16), // "signal_rotate270"
+QT_MOC_LITERAL(30, 420, 15), // "signal_viewflip"
+QT_MOC_LITERAL(31, 436, 5), // "bflip"
+QT_MOC_LITERAL(32, 442, 17), // "signal_viewmirror"
+QT_MOC_LITERAL(33, 460, 7), // "bmirror"
+QT_MOC_LITERAL(34, 468, 16), // "signal_clearArea"
+QT_MOC_LITERAL(35, 485, 15), // "signal_fillArea"
+QT_MOC_LITERAL(36, 501, 22), // "signal_showannotations"
+QT_MOC_LITERAL(37, 524, 5), // "bshow"
+QT_MOC_LITERAL(38, 530, 21), // "signal_showuserlayers"
+QT_MOC_LITERAL(39, 552, 17), // "signal_showlasers"
+QT_MOC_LITERAL(40, 570, 14), // "operation_open"
+QT_MOC_LITERAL(41, 585, 14), // "operation_load"
+QT_MOC_LITERAL(42, 600, 3), // "img"
+QT_MOC_LITERAL(43, 604, 14), // "operation_undo"
+QT_MOC_LITERAL(44, 619, 14), // "operation_redo"
+QT_MOC_LITERAL(45, 634, 20), // "operation_mouseCheck"
+QT_MOC_LITERAL(46, 655, 17), // "operation_pensize"
+QT_MOC_LITERAL(47, 673, 5), // "iSize"
+QT_MOC_LITERAL(48, 679, 14), // "operation_text"
+QT_MOC_LITERAL(49, 694, 15), // "operation_shape"
+QT_MOC_LITERAL(50, 710, 9), // "ShapeType"
+QT_MOC_LITERAL(51, 720, 5), // "eType"
+QT_MOC_LITERAL(52, 726, 15), // "operation_color"
+QT_MOC_LITERAL(53, 742, 16), // "operation_eraser"
+QT_MOC_LITERAL(54, 759, 15), // "operation_decal"
+QT_MOC_LITERAL(55, 775, 19), // "operation_clearArea"
+QT_MOC_LITERAL(56, 795, 18), // "operation_fillArea"
+QT_MOC_LITERAL(57, 814, 16), // "operation_expand"
+QT_MOC_LITERAL(58, 831, 15), // "ExpandDirection"
+QT_MOC_LITERAL(59, 847, 9), // "direction"
+QT_MOC_LITERAL(60, 857, 18), // "operation_rotation"
+QT_MOC_LITERAL(61, 876, 16), // "RotationDirecton"
+QT_MOC_LITERAL(62, 893, 14), // "operation_zoom"
+QT_MOC_LITERAL(63, 908, 14), // "operation_save"
+QT_MOC_LITERAL(64, 923, 7), // "QImage&"
+QT_MOC_LITERAL(65, 931, 21), // "operation_screenshots"
+QT_MOC_LITERAL(66, 953, 7), // "showNew"
+QT_MOC_LITERAL(67, 961, 4), // "open"
+QT_MOC_LITERAL(68, 966, 3), // "url"
+QT_MOC_LITERAL(69, 970, 4), // "save"
+QT_MOC_LITERAL(70, 975, 8), // "filename"
+QT_MOC_LITERAL(71, 984, 11), // "newDocument"
+QT_MOC_LITERAL(72, 996, 4), // "size"
+QT_MOC_LITERAL(73, 1001, 10), // "background"
+QT_MOC_LITERAL(74, 1012, 23), // "updateTabletSupportMode"
+QT_MOC_LITERAL(75, 1036, 5), // "paste"
+QT_MOC_LITERAL(76, 1042, 10), // "pasteImage"
+QT_MOC_LITERAL(77, 1053, 5), // "image"
+QT_MOC_LITERAL(78, 1059, 13), // "const QPoint*"
+QT_MOC_LITERAL(79, 1073, 5), // "point"
+QT_MOC_LITERAL(80, 1079, 13), // "clearOrDelete"
+QT_MOC_LITERAL(81, 1093, 12), // "resizeCanvas"
+QT_MOC_LITERAL(82, 1106, 11), // "toolChanged"
+QT_MOC_LITERAL(83, 1118, 15), // "onCanvasChanged"
+QT_MOC_LITERAL(84, 1134, 20), // "canvas::CanvasModel*"
+QT_MOC_LITERAL(85, 1155, 6), // "canvas"
+QT_MOC_LITERAL(86, 1162, 19), // "onCanvasSaveStarted"
+QT_MOC_LITERAL(87, 1182, 13), // "onCanvasSaved"
+QT_MOC_LITERAL(88, 1196, 12) // "errorMessage"
 
     },
     "BoardWidget\0signal_open\0\0signal_undo\0"
     "signal_redo\0signal_toolChanged\0"
     "tools::Tool::Type\0tool\0signal_mouse\0"
-    "signal_brushsize\0iSize\0signal_textsize\0"
+    "signal_brushChange\0signal_textsize\0"
     "iFontSize\0signal_color\0color\0signal_decal\0"
     "signal_expandup\0signal_expandright\0"
     "signal_expanddown\0signal_expandleft\0"
@@ -139,11 +139,12 @@ QT_MOC_LITERAL(88, 1194, 12) // "errorMessage"
     "operation_open\0operation_load\0img\0"
     "operation_undo\0operation_redo\0"
     "operation_mouseCheck\0operation_pensize\0"
-    "operation_text\0operation_shape\0ShapeType\0"
-    "eType\0operation_color\0operation_eraser\0"
-    "operation_decal\0operation_clearArea\0"
-    "operation_fillArea\0operation_expand\0"
-    "ExpandDirection\0direction\0operation_rotation\0"
+    "iSize\0operation_text\0operation_shape\0"
+    "ShapeType\0eType\0operation_color\0"
+    "operation_eraser\0operation_decal\0"
+    "operation_clearArea\0operation_fillArea\0"
+    "operation_expand\0ExpandDirection\0"
+    "direction\0operation_rotation\0"
     "RotationDirecton\0operation_zoom\0"
     "operation_save\0QImage&\0operation_screenshots\0"
     "showNew\0open\0url\0save\0filename\0"
@@ -177,38 +178,38 @@ static const uint qt_meta_data_BoardWidget[] = {
        5,    1,  332,    2, 0x06 /* Public */,
        8,    0,  335,    2, 0x06 /* Public */,
        9,    1,  336,    2, 0x06 /* Public */,
-      11,    1,  339,    2, 0x06 /* Public */,
-      13,    1,  342,    2, 0x06 /* Public */,
-      15,    0,  345,    2, 0x06 /* Public */,
-      16,    0,  346,    2, 0x06 /* Public */,
-      17,    0,  347,    2, 0x06 /* Public */,
-      18,    0,  348,    2, 0x06 /* Public */,
-      19,    0,  349,    2, 0x06 /* Public */,
-      20,    1,  350,    2, 0x06 /* Public */,
-      22,    0,  353,    2, 0x06 /* Public */,
-      23,    0,  354,    2, 0x06 /* Public */,
-      24,    0,  355,    2, 0x06 /* Public */,
-      25,    0,  356,    2, 0x06 /* Public */,
-      26,    0,  357,    2, 0x06 /* Public */,
-      27,    0,  358,    2, 0x06 /* Public */,
-      28,    0,  359,    2, 0x06 /* Public */,
-      29,    0,  360,    2, 0x06 /* Public */,
-      30,    0,  361,    2, 0x06 /* Public */,
-      31,    1,  362,    2, 0x06 /* Public */,
-      33,    1,  365,    2, 0x06 /* Public */,
-      35,    0,  368,    2, 0x06 /* Public */,
-      36,    1,  369,    2, 0x06 /* Public */,
-      37,    1,  372,    2, 0x06 /* Public */,
-      39,    1,  375,    2, 0x06 /* Public */,
-      40,    1,  378,    2, 0x06 /* Public */,
+      10,    1,  339,    2, 0x06 /* Public */,
+      12,    1,  342,    2, 0x06 /* Public */,
+      14,    0,  345,    2, 0x06 /* Public */,
+      15,    0,  346,    2, 0x06 /* Public */,
+      16,    0,  347,    2, 0x06 /* Public */,
+      17,    0,  348,    2, 0x06 /* Public */,
+      18,    0,  349,    2, 0x06 /* Public */,
+      19,    1,  350,    2, 0x06 /* Public */,
+      21,    0,  353,    2, 0x06 /* Public */,
+      22,    0,  354,    2, 0x06 /* Public */,
+      23,    0,  355,    2, 0x06 /* Public */,
+      24,    0,  356,    2, 0x06 /* Public */,
+      25,    0,  357,    2, 0x06 /* Public */,
+      26,    0,  358,    2, 0x06 /* Public */,
+      27,    0,  359,    2, 0x06 /* Public */,
+      28,    0,  360,    2, 0x06 /* Public */,
+      29,    0,  361,    2, 0x06 /* Public */,
+      30,    1,  362,    2, 0x06 /* Public */,
+      32,    1,  365,    2, 0x06 /* Public */,
+      34,    0,  368,    2, 0x06 /* Public */,
+      35,    1,  369,    2, 0x06 /* Public */,
+      36,    1,  372,    2, 0x06 /* Public */,
+      38,    1,  375,    2, 0x06 /* Public */,
+      39,    1,  378,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      41,    0,  381,    2, 0x0a /* Public */,
-      42,    1,  382,    2, 0x0a /* Public */,
-      44,    0,  385,    2, 0x0a /* Public */,
-      45,    0,  386,    2, 0x0a /* Public */,
-      46,    0,  387,    2, 0x0a /* Public */,
-      47,    1,  388,    2, 0x0a /* Public */,
+      40,    0,  381,    2, 0x0a /* Public */,
+      41,    1,  382,    2, 0x0a /* Public */,
+      43,    0,  385,    2, 0x0a /* Public */,
+      44,    0,  386,    2, 0x0a /* Public */,
+      45,    0,  387,    2, 0x0a /* Public */,
+      46,    1,  388,    2, 0x0a /* Public */,
       48,    1,  391,    2, 0x0a /* Public */,
       49,    1,  394,    2, 0x0a /* Public */,
       52,    1,  397,    2, 0x0a /* Public */,
@@ -243,15 +244,15 @@ static const uint qt_meta_data_BoardWidget[] = {
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 6,    7,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   10,
-    QMetaType::Void, QMetaType::Int,   12,
-    QMetaType::Void, QMetaType::QColor,   14,
+    QMetaType::Void, 0x80000000 | 6,    7,
+    QMetaType::Void, QMetaType::Int,   11,
+    QMetaType::Void, QMetaType::QColor,   13,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QReal,   21,
+    QMetaType::Void, QMetaType::QReal,   20,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -261,32 +262,32 @@ static const uint qt_meta_data_BoardWidget[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   32,
-    QMetaType::Void, QMetaType::Bool,   34,
+    QMetaType::Void, QMetaType::Bool,   31,
+    QMetaType::Void, QMetaType::Bool,   33,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QColor,   14,
-    QMetaType::Void, QMetaType::Bool,   38,
-    QMetaType::Void, QMetaType::Bool,   38,
-    QMetaType::Void, QMetaType::Bool,   38,
+    QMetaType::Void, QMetaType::QColor,   13,
+    QMetaType::Void, QMetaType::Bool,   37,
+    QMetaType::Void, QMetaType::Bool,   37,
+    QMetaType::Void, QMetaType::Bool,   37,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QImage,   43,
+    QMetaType::Void, QMetaType::QImage,   42,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   10,
-    QMetaType::Void, QMetaType::Int,   12,
+    QMetaType::Void, QMetaType::Int,   47,
+    QMetaType::Void, QMetaType::Int,   11,
     QMetaType::Void, 0x80000000 | 50,   51,
-    QMetaType::Void, QMetaType::QColor,   14,
-    QMetaType::Void, QMetaType::Int,   10,
+    QMetaType::Void, QMetaType::QColor,   13,
+    QMetaType::Void, QMetaType::Int,   47,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QColor,   14,
+    QMetaType::Void, QMetaType::QColor,   13,
     QMetaType::Void, 0x80000000 | 58,   59,
     QMetaType::Void, 0x80000000 | 61,   59,
-    QMetaType::Void, QMetaType::QReal,   21,
-    QMetaType::Void, 0x80000000 | 64,   43,
+    QMetaType::Void, QMetaType::QReal,   20,
+    QMetaType::Void, 0x80000000 | 64,   42,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -319,7 +320,7 @@ void BoardWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 2: _t->signal_redo(); break;
         case 3: _t->signal_toolChanged((*reinterpret_cast< tools::Tool::Type(*)>(_a[1]))); break;
         case 4: _t->signal_mouse(); break;
-        case 5: _t->signal_brushsize((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 5: _t->signal_brushChange((*reinterpret_cast< tools::Tool::Type(*)>(_a[1]))); break;
         case 6: _t->signal_textsize((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 7: _t->signal_color((*reinterpret_cast< QColor(*)>(_a[1]))); break;
         case 8: _t->signal_decal(); break;
@@ -418,8 +419,8 @@ void BoardWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
             }
         }
         {
-            typedef void (BoardWidget::*_t)(int );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&BoardWidget::signal_brushsize)) {
+            typedef void (BoardWidget::*_t)(tools::Tool::Type );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&BoardWidget::signal_brushChange)) {
                 *result = 5;
                 return;
             }
@@ -663,7 +664,7 @@ void BoardWidget::signal_mouse()
 }
 
 // SIGNAL 5
-void BoardWidget::signal_brushsize(int _t1)
+void BoardWidget::signal_brushChange(tools::Tool::Type _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 5, _a);

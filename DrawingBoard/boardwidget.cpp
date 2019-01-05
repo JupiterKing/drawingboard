@@ -184,9 +184,9 @@ BoardWidget::~BoardWidget()
 //////////////////////////////////////////////////////////////////////////
 void BoardWidget::operation_open()
 {
-	m_image.load("C:\\Users\\Public\\Pictures\\Sample Pictures\\111.jpg");
-	operation_load(m_image);
-	//emit signal_open();
+	//m_image.load("C:\\Users\\Public\\Pictures\\Sample Pictures\\111.jpg");
+	//operation_load(m_image);
+	emit signal_open();
 }
 
 void BoardWidget::operation_load(const QImage& img)

@@ -1,9 +1,0 @@
-﻿  Moc'ing test.h...
-  Rcc'ing test.qrc...
-  Uic'ing test.ui...
-  RCC: Warning: No resources in 'G:\QtPractice\DrawingBoard\test\test.qrc'.
-  main.cpp
-  test.cpp
-  moc_test.cpp
-  qrc_test.cpp
-  test.vcxproj -> G:\QtPractice\DrawingBoard\Win32\Release\test.exe
