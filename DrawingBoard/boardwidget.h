@@ -52,6 +52,8 @@ public slots:
 	virtual void operation_zoom(qreal izoomrate);	//放大缩小
 	virtual void operation_save(QImage& img);		//保存笔迹
 	virtual void operation_screenshots();			//截图
+	virtual void operation_quicktext(QString);
+	virtual bool isCanvasChanged();
 public:
 	BoardWidget* loadDocument(canvas::SessionLoader &loader);
 	void exit();
@@ -105,6 +107,7 @@ signals:
 	void signal_showannotations(bool bshow);
 	void signal_showuserlayers(bool bshow);
 	void signal_showlasers(bool bshow);
+	void signal_quicktext(QString strText);
 protected:
 	void closeEvent(QCloseEvent *event);
 	bool event(QEvent *event);

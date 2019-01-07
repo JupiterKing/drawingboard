@@ -506,9 +506,10 @@ void CanvasView::mouseReleaseEvent(QMouseEvent *event)
 	penReleaseEvent(event->pos(), event->button());
 }
 
-void CanvasView::mouseDoubleClickEvent(QMouseEvent*)
+void CanvasView::mouseDoubleClickEvent(QMouseEvent* event)
 {
 	// Ignore doubleclicks
+	QGraphicsView::mouseDoubleClickEvent(event);
 }
 
 void CanvasView::wheelEvent(QWheelEvent *event)

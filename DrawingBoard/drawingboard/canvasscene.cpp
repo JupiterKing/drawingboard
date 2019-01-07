@@ -30,6 +30,7 @@
 #include "canvas/statetracker.h"
 #include "paintcore/layerstack.h"
 #include "paintcore/layer.h"
+#include "textitem.h"
 
 namespace drawingboard {
 
@@ -70,18 +71,18 @@ void CanvasScene::initCanvas(canvas::CanvasModel *model)
 //    addItem(m_cefview);
 	connect(m_model->layerStack(), &paintcore::LayerStack::resized, this, &CanvasScene::handleCanvasResize);
 
-	paintcore::AnnotationModel *anns = m_model->layerStack()->annotations();
-	connect(anns, &paintcore::AnnotationModel::rowsInserted, this, &CanvasScene::annotationsAdded);
+	paintcore::AnnotationModel *anns = m_model->layerStack()->annotations(); //Annotation的数据
+	connect(anns, &paintcore::AnnotationModel::rowsInserted, this, &CanvasScene::annotationsAdded);  //signal:rowsInserted在Model的endInsertRows()后会发送
 	connect(anns, &paintcore::AnnotationModel::dataChanged, this, &CanvasScene::annotationsChanged);
 	connect(anns, &paintcore::AnnotationModel::rowsAboutToBeRemoved, this, &CanvasScene::annotationsRemoved);
 	connect(anns, &paintcore::AnnotationModel::modelReset, this, &CanvasScene::annotationsReset);
 
-	canvas::UserCursorModel *cursors = m_model->userCursors();
+	canvas::UserCursorModel *cursors = m_model->userCursors(); //用户光标图片的数据
 	connect(cursors, &canvas::UserCursorModel::rowsInserted, this, &CanvasScene::userCursorAdded);
 	connect(cursors, &canvas::UserCursorModel::dataChanged, this, &CanvasScene::userCursorChanged);
 	connect(cursors, &canvas::UserCursorModel::rowsAboutToBeRemoved, this, &CanvasScene::userCursorRemoved);
 
-	canvas::LaserTrailModel *lasers = m_model->laserTrails();
+	canvas::LaserTrailModel *lasers = m_model->laserTrails();	//激光笔路径的数据
 	connect(lasers, &canvas::LaserTrailModel::rowsInserted, this, &CanvasScene::laserAdded);
 	connect(lasers, &canvas::LaserTrailModel::dataChanged, this, &CanvasScene::laserChanged);
 	connect(lasers, &canvas::LaserTrailModel::rowsAboutToBeRemoved, this, &CanvasScene::laserRemoved);
@@ -131,7 +132,9 @@ void CanvasScene::showAnnotations(bool show)
 {
 	_showAnnotations = show;
 	for(QGraphicsItem *item : items()) {
-		if(item->type() == AnnotationItem::Type)
+		//if(item->type() == AnnotationItem::Type)
+		//	item->setVisible(show);
+		if (item->type() == TextItem::Type)
 			item->setVisible(show);
 	}
 }
@@ -140,8 +143,10 @@ void CanvasScene::showAnnotationBorders(bool hl)
 {
 	_showAnnotationBorders = hl;
 	for(QGraphicsItem *item : items()) {
-		if(item->type() == AnnotationItem::Type)
-			static_cast<AnnotationItem*>(item)->setShowBorder(hl);
+		/*if(item->type() == AnnotationItem::Type)
+			static_cast<AnnotationItem*>(item)->setShowBorder(hl);*/
+		//if (item->type() == TextItem::Type)
+		//	static_cast<TextItem*>(item)->setShowBorder(hl);
 	}
 }
 
@@ -160,10 +165,11 @@ void CanvasScene::handleCanvasResize(int xoffset, int yoffset, const QSize &olds
 	emit canvasResized(xoffset, yoffset, oldsize);
 }
 
-AnnotationItem *CanvasScene::getAnnotationItem(int id)
+TextItem *CanvasScene::getAnnotationItem(int id)
 {
 	for(QGraphicsItem *i : items()) {
-		AnnotationItem *item = qgraphicsitem_cast<AnnotationItem*>(i);
+		//AnnotationItem *item = qgraphicsitem_cast<AnnotationItem*>(i);
+		TextItem* item = qgraphicsitem_cast<TextItem*>(i);
 		if(item && item->id() == id)
 			return item;
 	}
@@ -172,8 +178,10 @@ AnnotationItem *CanvasScene::getAnnotationItem(int id)
 
 void CanvasScene::activeAnnotationChanged(int id)
 {
+	//当前选中项变化了
 	for(QGraphicsItem *i : items()) {
-		AnnotationItem *item = qgraphicsitem_cast<AnnotationItem*>(i);
+		//AnnotationItem *item = qgraphicsitem_cast<AnnotationItem*>(i);
+		TextItem* item = qgraphicsitem_cast<TextItem*>(i);
 		if(item)
 			item->setHighlight(item->id() == id);
 	}
@@ -184,14 +192,21 @@ void CanvasScene::annotationsAdded(const QModelIndex&, int first, int last)
 	for(int i=first;i<=last;++i) {
 		const QModelIndex a = m_model->layerStack()->annotations()->index(i);
 		const int id = a.data(paintcore::AnnotationModel::IdRole).toInt();
+		const QString text = a.data(Qt::DisplayRole).toString();
+		const int iFontsize = a.data(paintcore::AnnotationModel::FontsetRole).toInt();
 		if(getAnnotationItem(id)) {
 			qWarning("Annotation item already exists for ID %#x", id);
 			continue;
 		}
 
-		AnnotationItem *item = new AnnotationItem(id);
-		item->setShowBorder(showAnnotationBorders());
+		//AnnotationItem *item = new AnnotationItem(id);
+		//item->setShowBorder(showAnnotationBorders());
+		//item->setVisible(_showAnnotations);
+		
+		TextItem* item = new TextItem(id, text);
+		item->setTextSize(iFontsize);
 		item->setVisible(_showAnnotations);
+
 		addItem(item);
 		annotationsChanged(a, a, QVector<int>());
 	}
@@ -202,7 +217,8 @@ void CanvasScene::annotationsRemoved(const QModelIndex&, int first, int last)
 	for(int i=first;i<=last;++i) {
 		const QModelIndex a = m_model->layerStack()->annotations()->index(i);
 		int id = a.data(paintcore::AnnotationModel::IdRole).toInt();
-		AnnotationItem *item = getAnnotationItem(id);
+		//AnnotationItem *item = getAnnotationItem(id);
+		TextItem *item = getAnnotationItem(id);
 		if(item)
 			delete item;
 		else
@@ -218,15 +234,16 @@ void CanvasScene::annotationsChanged(const QModelIndex &first, const QModelIndex
 	for(int i=ifirst;i<=ilast;++i) {
 		const QModelIndex a = m_model->layerStack()->annotations()->index(i);
 		const int id = a.data(paintcore::AnnotationModel::IdRole).toInt();
-		AnnotationItem *item = getAnnotationItem(id);
-
+		//AnnotationItem *item = getAnnotationItem(id);
+		TextItem *item = getAnnotationItem(id);
 		if(!item) {
 			qWarning("Could not find annotation item %#x for update", id);
 			continue;
 		}
 
 		if(changed.isEmpty() || changed.contains(Qt::DisplayRole))
-			item->setText(a.data(Qt::DisplayRole).toString());
+			//item->setText(a.data(Qt::DisplayRole).toString());
+			item->setTextToItem(a.data(Qt::DisplayRole).toString());
 
 		if(changed.isEmpty() || changed.contains(paintcore::AnnotationModel::RectRole))
 			item->setGeometry(a.data(paintcore::AnnotationModel::RectRole).toRect());
@@ -243,7 +260,10 @@ void CanvasScene::annotationsReset()
 {
 	// Clear out any old annotation items
 	for(QGraphicsItem *item : items()) {
-		if(item->type() == AnnotationItem::Type) {
+		/*if(item->type() == AnnotationItem::Type) {
+			delete item;
+		}*/
+		if (item->type() == TextItem::Type) {
 			delete item;
 		}
 	}

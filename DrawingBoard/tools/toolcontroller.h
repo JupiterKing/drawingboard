@@ -80,6 +80,8 @@ public:
 
 	Tool *getTool(Tool::Type type);
 
+	void setTextFontSize(int iSize) { m_textsize = iSize; }
+	int textsize() const { return m_textsize; };
 	//! Is there a multipart drawing operation in progress?
 	bool isMultipartDrawing() const;
 
@@ -143,6 +145,7 @@ private:
 	bool m_prevShift, m_prevAlt;
 
 	int m_smoothing;
+	int m_textsize;
 	StrokeSmoother m_smoother;
 };
 

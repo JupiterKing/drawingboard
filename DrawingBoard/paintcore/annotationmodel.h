@@ -29,15 +29,17 @@ class QImage;
 
 namespace paintcore {
 
+	//注释的存储结构
 struct Annotation {
-	int id;
-	QString text;
-	QRect rect;
-	QColor background;
-	bool protect;
-	int valign;
+	int id;					//id标识
+	QString text;			//文字
+	QRect rect;				//区域
+	QColor background;		//背景色
+	bool protect;			//是否保护，不需要
+	int valign;				//竖直对齐方式
+	int	fontsize;			//字号大小
 
-	enum Handle {OUTSIDE, TRANSLATE, RS_TOPLEFT, RS_TOPRIGHT, RS_BOTTOMRIGHT, RS_BOTTOMLEFT, RS_TOP, RS_RIGHT, RS_BOTTOM, RS_LEFT};
+	enum Handle {OUTSIDE, TRANSLATE, RS_TOPLEFT, RS_TOPRIGHT, RS_BOTTOMRIGHT, RS_BOTTOMLEFT, RS_TOP, RS_RIGHT, RS_BOTTOM, RS_LEFT}; //10个handle，10个控制点
 	static const int HANDLE_SIZE = 10;
 
 	// TODO this needs to be HTML aware
@@ -48,7 +50,7 @@ struct Annotation {
 	QImage toImage() const;
 
 	//! Get the translation handle at the point
-	Handle handleAt(const QPoint &point, qreal zoom) const;
+	Handle handleAt(const QPoint &point, qreal zoom) const; //现在在哪个控制点上
 
 	//! Adjust annotation position or size
 	Handle adjustGeometry(Handle handle, const QPoint &delta);
@@ -72,44 +74,46 @@ struct Annotation {
 class AnnotationModel : public QAbstractListModel {
 	Q_OBJECT
 public:
-	enum AnnotationRoles {
+	enum AnnotationRoles {   //对应 struct Annotation{}的六个属性
 		// DisplayRole is used to get the text
 		IdRole = Qt::UserRole + 1,
 		RectRole,
 		BgColorRole, // avoid clash with Qt's own BackgroundColorRole
 		ProtectedRole,
-		VAlignRole
+		VAlignRole,
+		FontsetRole  //文字大小
 	};
 
 	explicit AnnotationModel(QObject *parent=nullptr);
 
 	AnnotationModel *clone(QObject *newParent=nullptr) const { return new AnnotationModel(this, newParent); }
 
-	int rowCount(const QModelIndex &parent=QModelIndex()) const;
+	int rowCount(const QModelIndex &parent=QModelIndex()) const; //model中有多少行数据，即size
 	QVariant data(const QModelIndex &index, int role=Qt::DisplayRole) const;
 
 	QHash<int, QByteArray> roleNames() const;
 
 	bool isEmpty() const { return m_annotations.isEmpty(); }
 
-	void addAnnotation(const Annotation &annotation);
+	void addAnnotation(const Annotation &annotation);  //增加数据
 	void addAnnotation(int id, const QRect &rect);
-	void deleteAnnotation(int id);
-	void reshapeAnnotation(int id, const QRect &newrect);
-	void changeAnnotation(int id, const QString &newtext, bool protect, int valign, const QColor &bgcolor);
+	void addAnnotation(int id, const QRect &rect,const QString strText,int iFontsize = 16);
+	void deleteAnnotation(int id);						//删除数据
+	void reshapeAnnotation(int id, const QRect &newrect); //改变形状
+	void changeAnnotation(int id, const QString &newtext, bool protect, int valign, const QColor &bgcolor);  //改变五个属性
 
 	void setAnnotations(const QList<Annotation> &list);
 	QList<Annotation> getAnnotations() const { return m_annotations; }
 
-	const Annotation *annotationAtPos(const QPoint &pos, qreal zoom) const;
+	const Annotation *annotationAtPos(const QPoint &pos, qreal zoom) const;  //通过点获取现在选中是哪个Annotation
 
 	Annotation::Handle annotationHandleAt(int id, const QPoint &point, qreal zoom) const;
 	Annotation::Handle annotationAdjustGeometry(int id, Annotation::Handle handle, const QPoint &delta);
 
-	const Annotation *getById(int id) const;
+	const Annotation *getById(int id) const;   //通过ID获取Annotation
 
 	//! Return the IDs of annotations that have no text content
-	QList<int> getEmptyIds() const;
+	QList<int> getEmptyIds() const;  //返回没有text文案的id列表
 
 	void clear();
 
@@ -118,7 +122,7 @@ private:
 
 	int findById(int id) const;
 
-	QList<Annotation> m_annotations;
+	QList<Annotation> m_annotations; //存储文案的list
 };
 
 }

@@ -26,21 +26,23 @@ namespace protocol {
 
 AnnotationCreate *AnnotationCreate::deserialize(uint8_t ctx, const uchar *data, uint len)
 {
-	if(len!=14)
-		return 0;
+	//if(len!=14)
+	//	return 0;
 	return new AnnotationCreate(
 		ctx,
 		qFromBigEndian<quint16>(data+0),
 		qFromBigEndian<qint32>(data+2),
 		qFromBigEndian<qint32>(data+6),
 		qFromBigEndian<quint16>(data+10),
-		qFromBigEndian<quint16>(data+12)
+		qFromBigEndian<quint16>(data+12),
+		qFromBigEndian<quint16>(data+14),
+		QByteArray((const char*)data + 14, len -14)
 	);
 }
 
 int AnnotationCreate::payloadLength() const
 {
-	return 2 + 4*2 + 2*2;
+	return 2 + 4*2 + 2*2 +2+m_text.length();
 }
 
 int AnnotationCreate::serializePayload(uchar *data) const
@@ -51,6 +53,9 @@ int AnnotationCreate::serializePayload(uchar *data) const
 	qToBigEndian(m_y, ptr); ptr += 4;
 	qToBigEndian(m_w, ptr); ptr += 2;
 	qToBigEndian(m_h, ptr); ptr += 2;
+	qToBigEndian(m_fontsize, ptr); ptr += 2;
+	memcpy(ptr, m_text.constData(), m_text.length());
+	ptr += m_text.length();
 	return ptr - data;
 }
 
@@ -62,6 +67,8 @@ Kwargs AnnotationCreate::kwargs() const
 	kw["y"] = QString::number(m_y);
 	kw["w"] = QString::number(m_w);
 	kw["h"] = QString::number(m_h);
+	kw["fontsize"] = QString::number(m_fontsize);
+	kw["text"] = text();
 	return kw;
 }
 
@@ -73,7 +80,9 @@ AnnotationCreate *AnnotationCreate::fromText(uint8_t ctx, const Kwargs &kwargs)
 		kwargs["x"].toInt(),
 		kwargs["y"].toInt(),
 		kwargs["w"].toInt(),
-		kwargs["h"].toInt()
+		kwargs["h"].toInt(),
+		kwargs["fontsize"].toInt(),
+		kwargs["text"]
 		);
 }
 

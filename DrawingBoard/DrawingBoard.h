@@ -45,6 +45,8 @@ public slots: //自定义外部调用接口
 	virtual void operation_rotation(RotationDirecton direction) = 0;		//旋转，每次旋转90度
 	virtual void operation_zoom(qreal izoomrate) = 0;					//放大缩小 范围: 80-150
 	virtual void operation_save(QImage& img) = 0;						//保存笔迹
+	virtual void operation_quicktext(QString) = 0;				//自定义的批改文案
+	virtual bool isCanvasChanged() =0;							//画板是否经过修改
 
 	virtual void operation_decal() = 0;							//贴花
 	virtual void operation_clearArea() = 0;						//清空	

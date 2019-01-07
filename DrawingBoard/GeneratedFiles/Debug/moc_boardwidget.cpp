@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_BoardWidget_t {
-    QByteArrayData data[89];
-    char stringdata0[1209];
+    QByteArrayData data[93];
+    char stringdata0[1270];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -69,55 +69,59 @@ QT_MOC_LITERAL(36, 501, 22), // "signal_showannotations"
 QT_MOC_LITERAL(37, 524, 5), // "bshow"
 QT_MOC_LITERAL(38, 530, 21), // "signal_showuserlayers"
 QT_MOC_LITERAL(39, 552, 17), // "signal_showlasers"
-QT_MOC_LITERAL(40, 570, 14), // "operation_open"
-QT_MOC_LITERAL(41, 585, 14), // "operation_load"
-QT_MOC_LITERAL(42, 600, 3), // "img"
-QT_MOC_LITERAL(43, 604, 14), // "operation_undo"
-QT_MOC_LITERAL(44, 619, 14), // "operation_redo"
-QT_MOC_LITERAL(45, 634, 20), // "operation_mouseCheck"
-QT_MOC_LITERAL(46, 655, 17), // "operation_pensize"
-QT_MOC_LITERAL(47, 673, 5), // "iSize"
-QT_MOC_LITERAL(48, 679, 14), // "operation_text"
-QT_MOC_LITERAL(49, 694, 15), // "operation_shape"
-QT_MOC_LITERAL(50, 710, 9), // "ShapeType"
-QT_MOC_LITERAL(51, 720, 5), // "eType"
-QT_MOC_LITERAL(52, 726, 15), // "operation_color"
-QT_MOC_LITERAL(53, 742, 16), // "operation_eraser"
-QT_MOC_LITERAL(54, 759, 15), // "operation_decal"
-QT_MOC_LITERAL(55, 775, 19), // "operation_clearArea"
-QT_MOC_LITERAL(56, 795, 18), // "operation_fillArea"
-QT_MOC_LITERAL(57, 814, 16), // "operation_expand"
-QT_MOC_LITERAL(58, 831, 15), // "ExpandDirection"
-QT_MOC_LITERAL(59, 847, 9), // "direction"
-QT_MOC_LITERAL(60, 857, 18), // "operation_rotation"
-QT_MOC_LITERAL(61, 876, 16), // "RotationDirecton"
-QT_MOC_LITERAL(62, 893, 14), // "operation_zoom"
-QT_MOC_LITERAL(63, 908, 14), // "operation_save"
-QT_MOC_LITERAL(64, 923, 7), // "QImage&"
-QT_MOC_LITERAL(65, 931, 21), // "operation_screenshots"
-QT_MOC_LITERAL(66, 953, 7), // "showNew"
-QT_MOC_LITERAL(67, 961, 4), // "open"
-QT_MOC_LITERAL(68, 966, 3), // "url"
-QT_MOC_LITERAL(69, 970, 4), // "save"
-QT_MOC_LITERAL(70, 975, 8), // "filename"
-QT_MOC_LITERAL(71, 984, 11), // "newDocument"
-QT_MOC_LITERAL(72, 996, 4), // "size"
-QT_MOC_LITERAL(73, 1001, 10), // "background"
-QT_MOC_LITERAL(74, 1012, 23), // "updateTabletSupportMode"
-QT_MOC_LITERAL(75, 1036, 5), // "paste"
-QT_MOC_LITERAL(76, 1042, 10), // "pasteImage"
-QT_MOC_LITERAL(77, 1053, 5), // "image"
-QT_MOC_LITERAL(78, 1059, 13), // "const QPoint*"
-QT_MOC_LITERAL(79, 1073, 5), // "point"
-QT_MOC_LITERAL(80, 1079, 13), // "clearOrDelete"
-QT_MOC_LITERAL(81, 1093, 12), // "resizeCanvas"
-QT_MOC_LITERAL(82, 1106, 11), // "toolChanged"
-QT_MOC_LITERAL(83, 1118, 15), // "onCanvasChanged"
-QT_MOC_LITERAL(84, 1134, 20), // "canvas::CanvasModel*"
-QT_MOC_LITERAL(85, 1155, 6), // "canvas"
-QT_MOC_LITERAL(86, 1162, 19), // "onCanvasSaveStarted"
-QT_MOC_LITERAL(87, 1182, 13), // "onCanvasSaved"
-QT_MOC_LITERAL(88, 1196, 12) // "errorMessage"
+QT_MOC_LITERAL(40, 570, 16), // "signal_quicktext"
+QT_MOC_LITERAL(41, 587, 7), // "strText"
+QT_MOC_LITERAL(42, 595, 14), // "operation_open"
+QT_MOC_LITERAL(43, 610, 14), // "operation_load"
+QT_MOC_LITERAL(44, 625, 3), // "img"
+QT_MOC_LITERAL(45, 629, 14), // "operation_undo"
+QT_MOC_LITERAL(46, 644, 14), // "operation_redo"
+QT_MOC_LITERAL(47, 659, 20), // "operation_mouseCheck"
+QT_MOC_LITERAL(48, 680, 17), // "operation_pensize"
+QT_MOC_LITERAL(49, 698, 5), // "iSize"
+QT_MOC_LITERAL(50, 704, 14), // "operation_text"
+QT_MOC_LITERAL(51, 719, 15), // "operation_shape"
+QT_MOC_LITERAL(52, 735, 9), // "ShapeType"
+QT_MOC_LITERAL(53, 745, 5), // "eType"
+QT_MOC_LITERAL(54, 751, 15), // "operation_color"
+QT_MOC_LITERAL(55, 767, 16), // "operation_eraser"
+QT_MOC_LITERAL(56, 784, 15), // "operation_decal"
+QT_MOC_LITERAL(57, 800, 19), // "operation_clearArea"
+QT_MOC_LITERAL(58, 820, 18), // "operation_fillArea"
+QT_MOC_LITERAL(59, 839, 16), // "operation_expand"
+QT_MOC_LITERAL(60, 856, 15), // "ExpandDirection"
+QT_MOC_LITERAL(61, 872, 9), // "direction"
+QT_MOC_LITERAL(62, 882, 18), // "operation_rotation"
+QT_MOC_LITERAL(63, 901, 16), // "RotationDirecton"
+QT_MOC_LITERAL(64, 918, 14), // "operation_zoom"
+QT_MOC_LITERAL(65, 933, 14), // "operation_save"
+QT_MOC_LITERAL(66, 948, 7), // "QImage&"
+QT_MOC_LITERAL(67, 956, 21), // "operation_screenshots"
+QT_MOC_LITERAL(68, 978, 19), // "operation_quicktext"
+QT_MOC_LITERAL(69, 998, 15), // "isCanvasChanged"
+QT_MOC_LITERAL(70, 1014, 7), // "showNew"
+QT_MOC_LITERAL(71, 1022, 4), // "open"
+QT_MOC_LITERAL(72, 1027, 3), // "url"
+QT_MOC_LITERAL(73, 1031, 4), // "save"
+QT_MOC_LITERAL(74, 1036, 8), // "filename"
+QT_MOC_LITERAL(75, 1045, 11), // "newDocument"
+QT_MOC_LITERAL(76, 1057, 4), // "size"
+QT_MOC_LITERAL(77, 1062, 10), // "background"
+QT_MOC_LITERAL(78, 1073, 23), // "updateTabletSupportMode"
+QT_MOC_LITERAL(79, 1097, 5), // "paste"
+QT_MOC_LITERAL(80, 1103, 10), // "pasteImage"
+QT_MOC_LITERAL(81, 1114, 5), // "image"
+QT_MOC_LITERAL(82, 1120, 13), // "const QPoint*"
+QT_MOC_LITERAL(83, 1134, 5), // "point"
+QT_MOC_LITERAL(84, 1140, 13), // "clearOrDelete"
+QT_MOC_LITERAL(85, 1154, 12), // "resizeCanvas"
+QT_MOC_LITERAL(86, 1167, 11), // "toolChanged"
+QT_MOC_LITERAL(87, 1179, 15), // "onCanvasChanged"
+QT_MOC_LITERAL(88, 1195, 20), // "canvas::CanvasModel*"
+QT_MOC_LITERAL(89, 1216, 6), // "canvas"
+QT_MOC_LITERAL(90, 1223, 19), // "onCanvasSaveStarted"
+QT_MOC_LITERAL(91, 1243, 13), // "onCanvasSaved"
+QT_MOC_LITERAL(92, 1257, 12) // "errorMessage"
 
     },
     "BoardWidget\0signal_open\0\0signal_undo\0"
@@ -136,17 +140,18 @@ QT_MOC_LITERAL(88, 1196, 12) // "errorMessage"
     "bmirror\0signal_clearArea\0signal_fillArea\0"
     "signal_showannotations\0bshow\0"
     "signal_showuserlayers\0signal_showlasers\0"
-    "operation_open\0operation_load\0img\0"
-    "operation_undo\0operation_redo\0"
-    "operation_mouseCheck\0operation_pensize\0"
-    "iSize\0operation_text\0operation_shape\0"
-    "ShapeType\0eType\0operation_color\0"
-    "operation_eraser\0operation_decal\0"
-    "operation_clearArea\0operation_fillArea\0"
-    "operation_expand\0ExpandDirection\0"
-    "direction\0operation_rotation\0"
+    "signal_quicktext\0strText\0operation_open\0"
+    "operation_load\0img\0operation_undo\0"
+    "operation_redo\0operation_mouseCheck\0"
+    "operation_pensize\0iSize\0operation_text\0"
+    "operation_shape\0ShapeType\0eType\0"
+    "operation_color\0operation_eraser\0"
+    "operation_decal\0operation_clearArea\0"
+    "operation_fillArea\0operation_expand\0"
+    "ExpandDirection\0direction\0operation_rotation\0"
     "RotationDirecton\0operation_zoom\0"
     "operation_save\0QImage&\0operation_screenshots\0"
+    "operation_quicktext\0isCanvasChanged\0"
     "showNew\0open\0url\0save\0filename\0"
     "newDocument\0size\0background\0"
     "updateTabletSupportMode\0paste\0pasteImage\0"
@@ -164,79 +169,82 @@ static const uint qt_meta_data_BoardWidget[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      63,   14, // methods
+      66,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-      30,       // signalCount
+      31,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  329,    2, 0x06 /* Public */,
-       3,    0,  330,    2, 0x06 /* Public */,
-       4,    0,  331,    2, 0x06 /* Public */,
-       5,    1,  332,    2, 0x06 /* Public */,
-       8,    0,  335,    2, 0x06 /* Public */,
-       9,    1,  336,    2, 0x06 /* Public */,
-      10,    1,  339,    2, 0x06 /* Public */,
-      12,    1,  342,    2, 0x06 /* Public */,
-      14,    0,  345,    2, 0x06 /* Public */,
-      15,    0,  346,    2, 0x06 /* Public */,
-      16,    0,  347,    2, 0x06 /* Public */,
-      17,    0,  348,    2, 0x06 /* Public */,
-      18,    0,  349,    2, 0x06 /* Public */,
-      19,    1,  350,    2, 0x06 /* Public */,
-      21,    0,  353,    2, 0x06 /* Public */,
-      22,    0,  354,    2, 0x06 /* Public */,
-      23,    0,  355,    2, 0x06 /* Public */,
-      24,    0,  356,    2, 0x06 /* Public */,
-      25,    0,  357,    2, 0x06 /* Public */,
-      26,    0,  358,    2, 0x06 /* Public */,
-      27,    0,  359,    2, 0x06 /* Public */,
-      28,    0,  360,    2, 0x06 /* Public */,
-      29,    0,  361,    2, 0x06 /* Public */,
-      30,    1,  362,    2, 0x06 /* Public */,
-      32,    1,  365,    2, 0x06 /* Public */,
-      34,    0,  368,    2, 0x06 /* Public */,
-      35,    1,  369,    2, 0x06 /* Public */,
-      36,    1,  372,    2, 0x06 /* Public */,
-      38,    1,  375,    2, 0x06 /* Public */,
-      39,    1,  378,    2, 0x06 /* Public */,
+       1,    0,  344,    2, 0x06 /* Public */,
+       3,    0,  345,    2, 0x06 /* Public */,
+       4,    0,  346,    2, 0x06 /* Public */,
+       5,    1,  347,    2, 0x06 /* Public */,
+       8,    0,  350,    2, 0x06 /* Public */,
+       9,    1,  351,    2, 0x06 /* Public */,
+      10,    1,  354,    2, 0x06 /* Public */,
+      12,    1,  357,    2, 0x06 /* Public */,
+      14,    0,  360,    2, 0x06 /* Public */,
+      15,    0,  361,    2, 0x06 /* Public */,
+      16,    0,  362,    2, 0x06 /* Public */,
+      17,    0,  363,    2, 0x06 /* Public */,
+      18,    0,  364,    2, 0x06 /* Public */,
+      19,    1,  365,    2, 0x06 /* Public */,
+      21,    0,  368,    2, 0x06 /* Public */,
+      22,    0,  369,    2, 0x06 /* Public */,
+      23,    0,  370,    2, 0x06 /* Public */,
+      24,    0,  371,    2, 0x06 /* Public */,
+      25,    0,  372,    2, 0x06 /* Public */,
+      26,    0,  373,    2, 0x06 /* Public */,
+      27,    0,  374,    2, 0x06 /* Public */,
+      28,    0,  375,    2, 0x06 /* Public */,
+      29,    0,  376,    2, 0x06 /* Public */,
+      30,    1,  377,    2, 0x06 /* Public */,
+      32,    1,  380,    2, 0x06 /* Public */,
+      34,    0,  383,    2, 0x06 /* Public */,
+      35,    1,  384,    2, 0x06 /* Public */,
+      36,    1,  387,    2, 0x06 /* Public */,
+      38,    1,  390,    2, 0x06 /* Public */,
+      39,    1,  393,    2, 0x06 /* Public */,
+      40,    1,  396,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      40,    0,  381,    2, 0x0a /* Public */,
-      41,    1,  382,    2, 0x0a /* Public */,
-      43,    0,  385,    2, 0x0a /* Public */,
-      44,    0,  386,    2, 0x0a /* Public */,
-      45,    0,  387,    2, 0x0a /* Public */,
-      46,    1,  388,    2, 0x0a /* Public */,
-      48,    1,  391,    2, 0x0a /* Public */,
-      49,    1,  394,    2, 0x0a /* Public */,
-      52,    1,  397,    2, 0x0a /* Public */,
-      53,    1,  400,    2, 0x0a /* Public */,
-      54,    0,  403,    2, 0x0a /* Public */,
-      55,    0,  404,    2, 0x0a /* Public */,
-      56,    1,  405,    2, 0x0a /* Public */,
-      57,    1,  408,    2, 0x0a /* Public */,
-      60,    1,  411,    2, 0x0a /* Public */,
-      62,    1,  414,    2, 0x0a /* Public */,
-      63,    1,  417,    2, 0x0a /* Public */,
-      65,    0,  420,    2, 0x0a /* Public */,
-      66,    0,  421,    2, 0x0a /* Public */,
-      67,    0,  422,    2, 0x0a /* Public */,
-      67,    1,  423,    2, 0x0a /* Public */,
-      69,    1,  426,    2, 0x0a /* Public */,
-      71,    2,  429,    2, 0x0a /* Public */,
-      74,    0,  434,    2, 0x08 /* Private */,
-      75,    0,  435,    2, 0x08 /* Private */,
-      76,    2,  436,    2, 0x08 /* Private */,
-      76,    1,  441,    2, 0x28 /* Private | MethodCloned */,
-      80,    0,  444,    2, 0x08 /* Private */,
-      81,    0,  445,    2, 0x08 /* Private */,
-      82,    1,  446,    2, 0x08 /* Private */,
-      83,    1,  449,    2, 0x08 /* Private */,
-      86,    0,  452,    2, 0x08 /* Private */,
-      87,    1,  453,    2, 0x08 /* Private */,
+      42,    0,  399,    2, 0x0a /* Public */,
+      43,    1,  400,    2, 0x0a /* Public */,
+      45,    0,  403,    2, 0x0a /* Public */,
+      46,    0,  404,    2, 0x0a /* Public */,
+      47,    0,  405,    2, 0x0a /* Public */,
+      48,    1,  406,    2, 0x0a /* Public */,
+      50,    1,  409,    2, 0x0a /* Public */,
+      51,    1,  412,    2, 0x0a /* Public */,
+      54,    1,  415,    2, 0x0a /* Public */,
+      55,    1,  418,    2, 0x0a /* Public */,
+      56,    0,  421,    2, 0x0a /* Public */,
+      57,    0,  422,    2, 0x0a /* Public */,
+      58,    1,  423,    2, 0x0a /* Public */,
+      59,    1,  426,    2, 0x0a /* Public */,
+      62,    1,  429,    2, 0x0a /* Public */,
+      64,    1,  432,    2, 0x0a /* Public */,
+      65,    1,  435,    2, 0x0a /* Public */,
+      67,    0,  438,    2, 0x0a /* Public */,
+      68,    1,  439,    2, 0x0a /* Public */,
+      69,    0,  442,    2, 0x0a /* Public */,
+      70,    0,  443,    2, 0x0a /* Public */,
+      71,    0,  444,    2, 0x0a /* Public */,
+      71,    1,  445,    2, 0x0a /* Public */,
+      73,    1,  448,    2, 0x0a /* Public */,
+      75,    2,  451,    2, 0x0a /* Public */,
+      78,    0,  456,    2, 0x08 /* Private */,
+      79,    0,  457,    2, 0x08 /* Private */,
+      80,    2,  458,    2, 0x08 /* Private */,
+      80,    1,  463,    2, 0x28 /* Private | MethodCloned */,
+      84,    0,  466,    2, 0x08 /* Private */,
+      85,    0,  467,    2, 0x08 /* Private */,
+      86,    1,  468,    2, 0x08 /* Private */,
+      87,    1,  471,    2, 0x08 /* Private */,
+      90,    0,  474,    2, 0x08 /* Private */,
+      91,    1,  475,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -269,41 +277,44 @@ static const uint qt_meta_data_BoardWidget[] = {
     QMetaType::Void, QMetaType::Bool,   37,
     QMetaType::Void, QMetaType::Bool,   37,
     QMetaType::Void, QMetaType::Bool,   37,
+    QMetaType::Void, QMetaType::QString,   41,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QImage,   42,
+    QMetaType::Void, QMetaType::QImage,   44,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   47,
+    QMetaType::Void, QMetaType::Int,   49,
     QMetaType::Void, QMetaType::Int,   11,
-    QMetaType::Void, 0x80000000 | 50,   51,
+    QMetaType::Void, 0x80000000 | 52,   53,
     QMetaType::Void, QMetaType::QColor,   13,
-    QMetaType::Void, QMetaType::Int,   47,
+    QMetaType::Void, QMetaType::Int,   49,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QColor,   13,
-    QMetaType::Void, 0x80000000 | 58,   59,
-    QMetaType::Void, 0x80000000 | 61,   59,
+    QMetaType::Void, 0x80000000 | 60,   61,
+    QMetaType::Void, 0x80000000 | 63,   61,
     QMetaType::Void, QMetaType::QReal,   20,
-    QMetaType::Void, 0x80000000 | 64,   42,
+    QMetaType::Void, 0x80000000 | 66,   44,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Bool,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QUrl,   72,
+    QMetaType::Void, QMetaType::QString,   74,
+    QMetaType::Void, QMetaType::QSize, QMetaType::QColor,   76,   77,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QUrl,   68,
-    QMetaType::Void, QMetaType::QString,   70,
-    QMetaType::Void, QMetaType::QSize, QMetaType::QColor,   72,   73,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::QImage, 0x80000000 | 78,   77,   79,
-    QMetaType::Void, QMetaType::QImage,   77,
+    QMetaType::Void, QMetaType::QImage, 0x80000000 | 82,   81,   83,
+    QMetaType::Void, QMetaType::QImage,   81,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 6,    7,
-    QMetaType::Void, 0x80000000 | 84,   85,
+    QMetaType::Void, 0x80000000 | 88,   89,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   88,
+    QMetaType::Void, QMetaType::QString,   92,
 
        0        // eod
 };
@@ -345,39 +356,43 @@ void BoardWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 27: _t->signal_showannotations((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 28: _t->signal_showuserlayers((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 29: _t->signal_showlasers((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 30: _t->operation_open(); break;
-        case 31: _t->operation_load((*reinterpret_cast< const QImage(*)>(_a[1]))); break;
-        case 32: _t->operation_undo(); break;
-        case 33: _t->operation_redo(); break;
-        case 34: _t->operation_mouseCheck(); break;
-        case 35: _t->operation_pensize((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 36: _t->operation_text((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 37: _t->operation_shape((*reinterpret_cast< ShapeType(*)>(_a[1]))); break;
-        case 38: _t->operation_color((*reinterpret_cast< QColor(*)>(_a[1]))); break;
-        case 39: _t->operation_eraser((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 40: _t->operation_decal(); break;
-        case 41: _t->operation_clearArea(); break;
-        case 42: _t->operation_fillArea((*reinterpret_cast< QColor(*)>(_a[1]))); break;
-        case 43: _t->operation_expand((*reinterpret_cast< ExpandDirection(*)>(_a[1]))); break;
-        case 44: _t->operation_rotation((*reinterpret_cast< RotationDirecton(*)>(_a[1]))); break;
-        case 45: _t->operation_zoom((*reinterpret_cast< qreal(*)>(_a[1]))); break;
-        case 46: _t->operation_save((*reinterpret_cast< QImage(*)>(_a[1]))); break;
-        case 47: _t->operation_screenshots(); break;
-        case 48: _t->showNew(); break;
-        case 49: _t->open(); break;
-        case 50: _t->open((*reinterpret_cast< const QUrl(*)>(_a[1]))); break;
-        case 51: _t->save((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 52: _t->newDocument((*reinterpret_cast< const QSize(*)>(_a[1])),(*reinterpret_cast< const QColor(*)>(_a[2]))); break;
-        case 53: _t->updateTabletSupportMode(); break;
-        case 54: _t->paste(); break;
-        case 55: _t->pasteImage((*reinterpret_cast< const QImage(*)>(_a[1])),(*reinterpret_cast< const QPoint*(*)>(_a[2]))); break;
-        case 56: _t->pasteImage((*reinterpret_cast< const QImage(*)>(_a[1]))); break;
-        case 57: _t->clearOrDelete(); break;
-        case 58: _t->resizeCanvas(); break;
-        case 59: _t->toolChanged((*reinterpret_cast< tools::Tool::Type(*)>(_a[1]))); break;
-        case 60: _t->onCanvasChanged((*reinterpret_cast< canvas::CanvasModel*(*)>(_a[1]))); break;
-        case 61: _t->onCanvasSaveStarted(); break;
-        case 62: _t->onCanvasSaved((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 30: _t->signal_quicktext((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 31: _t->operation_open(); break;
+        case 32: _t->operation_load((*reinterpret_cast< const QImage(*)>(_a[1]))); break;
+        case 33: _t->operation_undo(); break;
+        case 34: _t->operation_redo(); break;
+        case 35: _t->operation_mouseCheck(); break;
+        case 36: _t->operation_pensize((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 37: _t->operation_text((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 38: _t->operation_shape((*reinterpret_cast< ShapeType(*)>(_a[1]))); break;
+        case 39: _t->operation_color((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        case 40: _t->operation_eraser((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 41: _t->operation_decal(); break;
+        case 42: _t->operation_clearArea(); break;
+        case 43: _t->operation_fillArea((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        case 44: _t->operation_expand((*reinterpret_cast< ExpandDirection(*)>(_a[1]))); break;
+        case 45: _t->operation_rotation((*reinterpret_cast< RotationDirecton(*)>(_a[1]))); break;
+        case 46: _t->operation_zoom((*reinterpret_cast< qreal(*)>(_a[1]))); break;
+        case 47: _t->operation_save((*reinterpret_cast< QImage(*)>(_a[1]))); break;
+        case 48: _t->operation_screenshots(); break;
+        case 49: _t->operation_quicktext((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 50: { bool _r = _t->isCanvasChanged();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 51: _t->showNew(); break;
+        case 52: _t->open(); break;
+        case 53: _t->open((*reinterpret_cast< const QUrl(*)>(_a[1]))); break;
+        case 54: _t->save((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 55: _t->newDocument((*reinterpret_cast< const QSize(*)>(_a[1])),(*reinterpret_cast< const QColor(*)>(_a[2]))); break;
+        case 56: _t->updateTabletSupportMode(); break;
+        case 57: _t->paste(); break;
+        case 58: _t->pasteImage((*reinterpret_cast< const QImage(*)>(_a[1])),(*reinterpret_cast< const QPoint*(*)>(_a[2]))); break;
+        case 59: _t->pasteImage((*reinterpret_cast< const QImage(*)>(_a[1]))); break;
+        case 60: _t->clearOrDelete(); break;
+        case 61: _t->resizeCanvas(); break;
+        case 62: _t->toolChanged((*reinterpret_cast< tools::Tool::Type(*)>(_a[1]))); break;
+        case 63: _t->onCanvasChanged((*reinterpret_cast< canvas::CanvasModel*(*)>(_a[1]))); break;
+        case 64: _t->onCanvasSaveStarted(); break;
+        case 65: _t->onCanvasSaved((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -593,6 +608,13 @@ void BoardWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
                 return;
             }
         }
+        {
+            typedef void (BoardWidget::*_t)(QString );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&BoardWidget::signal_quicktext)) {
+                *result = 30;
+                return;
+            }
+        }
     }
 }
 
@@ -621,13 +643,13 @@ int BoardWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 63)
+        if (_id < 66)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 63;
+        _id -= 66;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 63)
+        if (_id < 66)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 63;
+        _id -= 66;
     }
     return _id;
 }
@@ -821,5 +843,12 @@ void BoardWidget::signal_showlasers(bool _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 29, _a);
+}
+
+// SIGNAL 30
+void BoardWidget::signal_quicktext(QString _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 30, _a);
 }
 QT_END_MOC_NAMESPACE

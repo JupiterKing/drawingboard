@@ -151,6 +151,22 @@ BoardWidget::BoardWidget(QWidget* parent /*= nullptr*/):
 		m_doc->toolCtrl()->setActiveBrush(brush);
 	});
 	connect(this, SIGNAL(signal_textsize(int)), m_view, SLOT(setOutlineSize(int)));
+	connect(this, &BoardWidget::signal_textsize, this, [&](int iSize)
+	{
+		m_doc->toolCtrl()->setTextFontSize(iSize);
+	});
+	connect(this, &BoardWidget::signal_quicktext, this, [&](QString strText) 
+	{ 
+		//自定义批改文案
+		QList<protocol::MessagePtr> msgs;
+		const uint8_t contextId = m_doc->toolCtrl()->myId();
+		int newId = m_doc->toolCtrl()->model()->getAvailableAnnotationId();
+		msgs << protocol::MessagePtr(new protocol::AnnotationCreate(contextId, newId, 200, 200, 200, 20, m_doc->toolCtrl()->textsize(), strText)); //创建Annotation
+		if (!msgs.isEmpty()) {
+			msgs.prepend(protocol::MessagePtr(new protocol::UndoPoint(contextId)));
+			m_doc->toolCtrl()->sendMessages(msgs);
+		}
+	});
 
 	//connect(this, SIGNAL(signal_showannotations(bool)), this, SLOT(setShowAnnotations(bool)));
 	connect(this, SIGNAL(signal_showuserlayers(bool)), m_canvasscene, SLOT(showUserLayers(bool)));
@@ -359,6 +375,19 @@ void BoardWidget::operation_save(QImage& img)
 void BoardWidget::operation_screenshots()
 {
 
+}
+
+void BoardWidget::operation_quicktext(QString strText)
+{
+	emit signal_quicktext(strText);
+	emit signal_toolChanged(tools::Tool::ANNOTATION);
+	emit signal_brushChange(tools::Tool::ANNOTATION);
+	m_lasttoolType = tools::Tool::ANNOTATION;
+}
+
+bool BoardWidget::isCanvasChanged()
+{
+	return true;
 }
 
 //////////////////////////////////////////////////////////////////////////

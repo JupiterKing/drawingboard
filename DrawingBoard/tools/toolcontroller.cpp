@@ -43,7 +43,8 @@ ToolController::ToolController(QObject *parent)
 	m_model(nullptr),
 	m_activeTool(nullptr),
 	m_prevShift(false), m_prevAlt(false),
-	m_smoothing(0)
+	m_smoothing(0),
+	m_textsize(16)
 {
 	registerTool(new Freehand(*this, false));
 	registerTool(new Freehand(*this, true)); // eraser is a specialized freehand tool,,ÏðÆ¤²Á
@@ -64,6 +65,7 @@ ToolController::ToolController(QObject *parent)
 	m_activeTool = m_toolbox[Tool::FREEHAND];
 	m_activeLayer = 0;
 	m_activeAnnotation = 0;
+	m_textsize = 16;
 }
 
 void ToolController::registerTool(Tool *tool)

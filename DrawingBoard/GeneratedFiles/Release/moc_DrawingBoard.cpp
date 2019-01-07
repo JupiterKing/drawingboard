@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_DrawingBoard_t {
-    QByteArrayData data[31];
-    char stringdata0[423];
+    QByteArrayData data[33];
+    char stringdata0[459];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -56,10 +56,12 @@ QT_MOC_LITERAL(23, 298, 14), // "operation_zoom"
 QT_MOC_LITERAL(24, 313, 9), // "izoomrate"
 QT_MOC_LITERAL(25, 323, 14), // "operation_save"
 QT_MOC_LITERAL(26, 338, 7), // "QImage&"
-QT_MOC_LITERAL(27, 346, 15), // "operation_decal"
-QT_MOC_LITERAL(28, 362, 19), // "operation_clearArea"
-QT_MOC_LITERAL(29, 382, 18), // "operation_fillArea"
-QT_MOC_LITERAL(30, 401, 21) // "operation_screenshots"
+QT_MOC_LITERAL(27, 346, 19), // "operation_quicktext"
+QT_MOC_LITERAL(28, 366, 15), // "isCanvasChanged"
+QT_MOC_LITERAL(29, 382, 15), // "operation_decal"
+QT_MOC_LITERAL(30, 398, 19), // "operation_clearArea"
+QT_MOC_LITERAL(31, 418, 18), // "operation_fillArea"
+QT_MOC_LITERAL(32, 437, 21) // "operation_screenshots"
 
     },
     "DrawingBoard\0operation_open\0\0"
@@ -72,6 +74,7 @@ QT_MOC_LITERAL(30, 401, 21) // "operation_screenshots"
     "ExpandDirection\0direction\0operation_rotation\0"
     "RotationDirecton\0operation_zoom\0"
     "izoomrate\0operation_save\0QImage&\0"
+    "operation_quicktext\0isCanvasChanged\0"
     "operation_decal\0operation_clearArea\0"
     "operation_fillArea\0operation_screenshots"
 };
@@ -83,7 +86,7 @@ static const uint qt_meta_data_DrawingBoard[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      20,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -91,24 +94,26 @@ static const uint qt_meta_data_DrawingBoard[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  104,    2, 0x0a /* Public */,
-       3,    1,  105,    2, 0x0a /* Public */,
-       5,    0,  108,    2, 0x0a /* Public */,
-       6,    0,  109,    2, 0x0a /* Public */,
-       7,    0,  110,    2, 0x0a /* Public */,
-       8,    1,  111,    2, 0x0a /* Public */,
-      10,    1,  114,    2, 0x0a /* Public */,
-      12,    1,  117,    2, 0x0a /* Public */,
-      15,    1,  120,    2, 0x0a /* Public */,
-      17,    1,  123,    2, 0x0a /* Public */,
-      18,    1,  126,    2, 0x0a /* Public */,
-      21,    1,  129,    2, 0x0a /* Public */,
-      23,    1,  132,    2, 0x0a /* Public */,
-      25,    1,  135,    2, 0x0a /* Public */,
-      27,    0,  138,    2, 0x0a /* Public */,
-      28,    0,  139,    2, 0x0a /* Public */,
-      29,    1,  140,    2, 0x0a /* Public */,
-      30,    0,  143,    2, 0x0a /* Public */,
+       1,    0,  114,    2, 0x0a /* Public */,
+       3,    1,  115,    2, 0x0a /* Public */,
+       5,    0,  118,    2, 0x0a /* Public */,
+       6,    0,  119,    2, 0x0a /* Public */,
+       7,    0,  120,    2, 0x0a /* Public */,
+       8,    1,  121,    2, 0x0a /* Public */,
+      10,    1,  124,    2, 0x0a /* Public */,
+      12,    1,  127,    2, 0x0a /* Public */,
+      15,    1,  130,    2, 0x0a /* Public */,
+      17,    1,  133,    2, 0x0a /* Public */,
+      18,    1,  136,    2, 0x0a /* Public */,
+      21,    1,  139,    2, 0x0a /* Public */,
+      23,    1,  142,    2, 0x0a /* Public */,
+      25,    1,  145,    2, 0x0a /* Public */,
+      27,    1,  148,    2, 0x0a /* Public */,
+      28,    0,  151,    2, 0x0a /* Public */,
+      29,    0,  152,    2, 0x0a /* Public */,
+      30,    0,  153,    2, 0x0a /* Public */,
+      31,    1,  154,    2, 0x0a /* Public */,
+      32,    0,  157,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -125,6 +130,8 @@ static const uint qt_meta_data_DrawingBoard[] = {
     QMetaType::Void, 0x80000000 | 22,   20,
     QMetaType::Void, QMetaType::QReal,   24,
     QMetaType::Void, 0x80000000 | 26,    4,
+    QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Bool,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QColor,   16,
@@ -154,10 +161,13 @@ void DrawingBoard::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 11: _t->operation_rotation((*reinterpret_cast< RotationDirecton(*)>(_a[1]))); break;
         case 12: _t->operation_zoom((*reinterpret_cast< qreal(*)>(_a[1]))); break;
         case 13: _t->operation_save((*reinterpret_cast< QImage(*)>(_a[1]))); break;
-        case 14: _t->operation_decal(); break;
-        case 15: _t->operation_clearArea(); break;
-        case 16: _t->operation_fillArea((*reinterpret_cast< QColor(*)>(_a[1]))); break;
-        case 17: _t->operation_screenshots(); break;
+        case 14: _t->operation_quicktext((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 15: { bool _r = _t->isCanvasChanged();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 16: _t->operation_decal(); break;
+        case 17: _t->operation_clearArea(); break;
+        case 18: _t->operation_fillArea((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        case 19: _t->operation_screenshots(); break;
         default: ;
         }
     }
@@ -188,13 +198,13 @@ int DrawingBoard::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 20)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 20;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 20)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 18;
+        _id -= 20;
     }
     return _id;
 }

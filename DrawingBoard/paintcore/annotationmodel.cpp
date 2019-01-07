@@ -54,6 +54,7 @@ QVariant AnnotationModel::data(const QModelIndex &index, int role) const
 			case BgColorRole: return a.background;
 			case ProtectedRole: return a.protect;
 			case VAlignRole: return a.valign;
+			case FontsetRole:return a.fontsize;
 			default: break;
 		}
 	}
@@ -62,6 +63,7 @@ QVariant AnnotationModel::data(const QModelIndex &index, int role) const
 
 QHash<int, QByteArray> AnnotationModel::roleNames() const
 {
+	//数据结构中的属性
 	QHash<int, QByteArray> roles;
 	roles[Qt::DisplayRole] = "display";
 	roles[IdRole] = "annotationId";
@@ -69,6 +71,7 @@ QHash<int, QByteArray> AnnotationModel::roleNames() const
 	roles[BgColorRole] = "background";
 	roles[ProtectedRole] = "protect";
 	roles[VAlignRole] = "valign";
+	roles[FontsetRole] = "fontsetsize";
 	return roles;
 }
 
@@ -88,6 +91,11 @@ void AnnotationModel::addAnnotation(const Annotation &annotation)
 void AnnotationModel::addAnnotation(int id, const QRect &rect)
 {
 	addAnnotation(Annotation {id, QString(), rect, QColor(Qt::transparent), false, 0});
+}
+
+void AnnotationModel::addAnnotation(int id, const QRect &rect, const QString strText, int iFontsize /*= 16*/)
+{
+	addAnnotation(Annotation{ id, strText, rect, QColor(Qt::transparent), false, 0,iFontsize });
 }
 
 void AnnotationModel::deleteAnnotation(int id)
@@ -112,7 +120,7 @@ void AnnotationModel::reshapeAnnotation(int id, const QRect &newrect)
 	}
 
 	m_annotations[idx].rect = newrect;
-	emit dataChanged(index(idx), index(idx), QVector<int>() << RectRole);
+	emit dataChanged(index(idx), index(idx), QVector<int>() << RectRole);  //发送信号去scene里面去修改
 }
 
 void AnnotationModel::changeAnnotation(int id, const QString &newtext, bool protect, int valign, const QColor &bgcolor)
@@ -222,6 +230,10 @@ void Annotation::paint(QPainter *painter, const QRectF &paintrect) const
 	QTextDocument doc;
 	doc.setHtml(text);
 	doc.setTextWidth(rect0.width());
+
+	QFont font;
+	font.setPixelSize(fontsize); 
+	doc.setDefaultFont(font); //设置字体大小
 
 	QPointF offset;
 	if(valign == protocol::AnnotationEdit::FLAG_VALIGN_CENTER) {
@@ -338,6 +350,7 @@ void Annotation::toDataStream(QDataStream &out) const
 	out << background;
 	out << protect;
 	out << quint8(valign);
+	out << quint16(fontsize);
 	out << text;
 }
 
@@ -358,9 +371,12 @@ Annotation Annotation::fromDataStream(QDataStream &in)
 	quint8 valign;
 	in >> valign;
 
+	quint16 fontsize;
+	in >> fontsize;
+
 	QString text;
 	in >> text;
-	return Annotation {id, text, rect, color, protect, valign};
+	return Annotation {id, text, rect, color, protect, valign,fontsize};
 }
 
 uint8_t Annotation::flags() const {

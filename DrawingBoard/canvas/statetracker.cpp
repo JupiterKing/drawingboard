@@ -991,7 +991,8 @@ void StateTracker::revertSavepointAndReplay(const StateSavepoint savepoint)
 
 void StateTracker::handleAnnotationCreate(const protocol::AnnotationCreate &cmd)
 {
-	_image->annotations()->addAnnotation(cmd.id(), QRect(cmd.x(), cmd.y(), cmd.w(), cmd.h()));
+	//_image->annotations()->addAnnotation(cmd.id(), QRect(cmd.x(), cmd.y(), cmd.w(), cmd.h()));
+	_image->annotations()->addAnnotation(cmd.id(), QRect(cmd.x(), cmd.y(), cmd.w(), cmd.h()),cmd.text(),cmd.fontsize());
 	if(cmd.contextId() == localId())
 		emit myAnnotationCreated(cmd.id());
 }

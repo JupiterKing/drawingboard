@@ -40,6 +40,7 @@ namespace drawingboard {
 
 class CanvasItem;
 class AnnotationItem;
+class TextItem;
 class SelectionItem;
 class UserMarkerItem;
 class LaserTrailItem;
@@ -116,8 +117,8 @@ private slots:
 	void laserChanged(const QModelIndex &first, const QModelIndex &last, const QVector<int> &changed);
 
 private:
-	AnnotationItem *getAnnotationItem(int id);
-
+	//AnnotationItem *getAnnotationItem(int id);
+	TextItem *getAnnotationItem(int id);
 	//! The board contents
 	CanvasItem *m_image;
 

@@ -117,6 +117,7 @@
     <ClCompile Include="drawingboard\canvasview.cpp" />
     <ClCompile Include="drawingboard\lasertrailitem.cpp" />
     <ClCompile Include="drawingboard\selectionitem.cpp" />
+    <ClCompile Include="drawingboard\textitem.cpp" />
     <ClCompile Include="net\annotationMsg.cpp" />
     <ClCompile Include="net\commands.cpp" />
     <ClCompile Include="net\image.cpp" />
@@ -158,6 +159,7 @@
   <ItemGroup>
     <QtMoc Include="document.h" />
     <QtMoc Include="boardwidget.h" />
+    <QtMoc Include="drawingboard\textitem.h" />
     <ClInclude Include="net\annotationMsg.h" />
     <ClInclude Include="net\commands.h" />
     <ClInclude Include="net\image.h" />

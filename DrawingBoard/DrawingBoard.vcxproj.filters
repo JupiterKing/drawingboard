@@ -230,6 +230,9 @@
     <ClCompile Include="boardwidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="drawingboard\textitem.cpp">
+      <Filter>Source Files\drawingboard</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="canvas\history.h">
@@ -243,9 +246,6 @@
     </ClInclude>
     <ClInclude Include="canvas\retcon.h">
       <Filter>Header Files\canvas</Filter>
-    </ClInclude>
-    <ClInclude Include="drawingboard\annotationitem.h">
-      <Filter>Header Files\drawingboard</Filter>
     </ClInclude>
     <ClInclude Include="drawingboard\lasertrailitem.h">
       <Filter>Header Files\drawingboard</Filter>
@@ -358,6 +358,9 @@
     <ClInclude Include="paintcore\floodfillpaint.h">
       <Filter>Header Files\paintcore</Filter>
     </ClInclude>
+    <ClInclude Include="drawingboard\annotationitem.h">
+      <Filter>Header Files\drawingboard</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="drawingboard_global.h">
@@ -418,6 +421,9 @@
     </QtMoc>
     <QtMoc Include="DrawingBoard.h">
       <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="drawingboard\textitem.h">
+      <Filter>Header Files\drawingboard</Filter>
     </QtMoc>
   </ItemGroup>
 </Project>

@@ -40,7 +40,7 @@ public:
 	void end() override;
 
 private:
-	static const int PREVIEW_ID = 0x010000;
+	static const int PREVIEW_ID = 0x010000;   //Ä¬ÈÏID,65536
 	int m_selectedId;
 	bool m_isNew;
 

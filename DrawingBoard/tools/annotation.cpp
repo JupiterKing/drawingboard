@@ -54,7 +54,7 @@ void Annotation::begin(const paintcore::Point& point, bool right, float zoom)
 			m_handle = paintcore::Annotation::OUTSIDE;
 		else
 			m_handle = owner.model()->layerStack()->annotations()->annotationHandleAt(m_selectedId, point.toPoint(), zoom);
-		owner.setActiveAnnotation(m_selectedId);
+		owner.setActiveAnnotation(m_selectedId); //设置当前的激活的Annotation
 
 	} else {
 		// No annotation, start creating a new one
@@ -68,7 +68,7 @@ void Annotation::begin(const paintcore::Point& point, bool right, float zoom)
 		// so we create the preview annotation directly in the model. Since this
 		// doesn't affect the other annotations, it shouldn't case any problems.
 		// Also, we use a special ID for the preview object that is outside the protocol range.
-		m_selectedId = PREVIEW_ID;
+		m_selectedId = PREVIEW_ID;  
 
 		owner.model()->layerStack()->annotations()->addAnnotation(m_selectedId, QRect(m_p1.toPoint(), m_p1.toPoint() + QPoint(5,5)));
 		m_handle = paintcore::Annotation::RS_BOTTOMRIGHT;
@@ -140,7 +140,7 @@ void Annotation::end()
 			return;
 		}
 
-		msgs << protocol::MessagePtr(new protocol::AnnotationCreate(contextId, newId, rect.x(), rect.y(), rect.width(), rect.height()));
+		msgs << protocol::MessagePtr(new protocol::AnnotationCreate(contextId, newId, rect.x(), rect.y(), rect.width(), rect.height(),owner.textsize(),QString())); //创建Annotation
 	}
 
 	if(!msgs.isEmpty()) {

@@ -36,10 +36,12 @@ namespace protocol {
  */
 class AnnotationCreate : public Message {
 public:
-	AnnotationCreate(uint8_t ctx, uint16_t id, int32_t x, int32_t y, uint16_t w, uint16_t h)
-		: Message(MSG_ANNOTATION_CREATE, ctx), m_id(id), m_x(x), m_y(y), m_w(w), m_h(h)
+	/*AnnotationCreate(uint8_t ctx, uint16_t id, int32_t x, int32_t y, uint16_t w, uint16_t h, uint16_t fontsize, const QByteArray &text)
+		: Message(MSG_ANNOTATION_CREATE, ctx), m_id(id), m_x(x), m_y(y), m_w(w), m_h(h), m_fontsize(fontsize), m_text(text)
+	{}*/
+	AnnotationCreate(uint8_t ctx, uint16_t id, int32_t x, int32_t y, uint16_t w, uint16_t h, uint16_t fontsize, const QString &text)
+		: Message(MSG_ANNOTATION_CREATE, ctx), m_id(id), m_x(x), m_y(y), m_w(w), m_h(h), m_fontsize(fontsize), m_text(text.toUtf8())
 	{}
-
 	static AnnotationCreate *deserialize(uint8_t ctx, const uchar *data, uint len);
 	static AnnotationCreate *fromText(uint8_t ctx, const Kwargs &kwargs);
 
@@ -55,6 +57,8 @@ public:
 	int32_t y() const { return m_y; }
 	uint16_t w() const { return m_w; }
 	uint16_t h() const { return m_h; }
+	uint16_t fontsize() const { return m_fontsize; }
+	QString text() const { return QString::fromUtf8(m_text); }
 
 	/**
 	 * @brief Check if the ID's namespace portition matches the context ID
@@ -76,6 +80,8 @@ private:
 	int32_t m_y;
 	uint16_t m_w;
 	uint16_t m_h;
+	QByteArray m_text;
+	uint16_t m_fontsize;
 };
 
 /**
